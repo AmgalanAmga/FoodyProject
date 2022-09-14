@@ -16,7 +16,7 @@ import { ChoosingMeal } from "../components";
 const StyledStep = styled(StepConnector)(({ theme }) => ({}));
 
 export const MenuMain = () => {
-  const [activeStep, seActiveStep] = useState(0);
+  const [activeStep, setActiveStep] = useState(0);
   const router = MenuMainRouterAnimation();
   const steps = [
     "Хоолоо сонгох",

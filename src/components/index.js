@@ -1,4 +1,6 @@
+export * from "./Login";
 export * from "./Navbar";
+export * from "./Register";
 export * from "./MainLeft";
 export * from "./FoodCart";
 export * from "./MenuCalendar";
@@ -6,4 +8,7 @@ export * from "./ChoosingMeal";
 export * from "./OrderCalendar";
 export * from "./OrderHistoryList";
 export * from "./WeekdaysAndPrice";
+export * from "./FoodOrderListItem";
 export * from "./OrderHistoryDetail";
+export * from "./MenuFoodDetailCard";
+export * from "./FoodOrderListTotalPrice";

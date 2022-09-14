@@ -1,17 +1,23 @@
-import React from "react";
+import { useContext } from "react";
 import AddIcon from "@mui/icons-material/Add";
+import { MainContext } from "../context/MainContext";
 import { Box, Typography, IconButton } from "@mui/material";
-import { transform } from "framer-motion";
 export const FoodCart = ({ food }) => {
+  const { setMenuOrderDetailOpen, setFoodCardDetailInfo } =
+    useContext(MainContext);
+  const showFoodInfo = () => {
+    setMenuOrderDetailOpen(true);
+    setFoodCardDetailInfo(food);
+  };
   return (
     <Box
       sx={{
         padding: 2,
-        width: "192px",
+        width: "12rem",
         height: "14rem",
         borderRadius: 2,
         position: "relative",
-        border: "1px solid #C4C4C4",
+        border: "1px solid #C4C4C4"
       }}
     >
       <img
@@ -21,7 +27,7 @@ export const FoodCart = ({ food }) => {
           position: "absolute",
           top: "-5%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -50%)"
         }}
         alt="foodImage"
       />
@@ -30,7 +36,7 @@ export const FoodCart = ({ food }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -50%)"
         }}
       >
         <Typography
@@ -55,11 +61,14 @@ export const FoodCart = ({ food }) => {
           bottom: "16px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
+          justifyContent: "space-between"
         }}
       >
         <Typography variant="h6">{food.price}₮</Typography>
-        <IconButton sx={{ color: "white", background: "#66B60F" }}>
+        <IconButton
+          onClick={showFoodInfo}
+          sx={{ color: "white", background: "#66B60F" }}
+        >
           <AddIcon />
         </IconButton>
       </Box>
