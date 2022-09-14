@@ -9,12 +9,11 @@ import {
   Stepper,
   StepLabel,
   Typography,
-  StepConnector
+  StepConnector,
 } from "@mui/material";
+import { ChoosingMeal } from "../components";
 
-const StyledStep = styled(StepConnector)(({ theme }) => ({
-    
-}));
+const StyledStep = styled(StepConnector)(({ theme }) => ({}));
 
 export const MenuMain = () => {
   const [activeStep, seActiveStep] = useState(0);
@@ -23,7 +22,7 @@ export const MenuMain = () => {
     "Хоолоо сонгох",
     "Хүргэлтийн мэдээлэл",
     "Утасны дугаараа баталгаажуулах",
-    "Төлбөр төлөх"
+    "Төлбөр төлөх",
   ];
   return (
     <motion.div
@@ -37,7 +36,7 @@ export const MenuMain = () => {
         style={{
           width: "90%",
           margin: "0 auto",
-          minHeight: "90vh"
+          minHeight: "100vh",
         }}
       >
         <Box sx={{ width: "100%" }}>
@@ -51,6 +50,7 @@ export const MenuMain = () => {
             })}
           </Stepper>
         </Box>
+        <ChoosingMeal />
       </Box>
     </motion.div>
   );

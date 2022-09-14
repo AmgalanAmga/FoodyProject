@@ -1,121 +1,142 @@
 export const foodDatas = [
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/kimchiChige.png?alt=media&token=847ea9ad-a02b-4db6-bce6-f6e83bd1ee95",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/kimchiJige.png?alt=media&token=f4b13237-abab-46d6-8092-97d7005beff2",
     name: "Кимчи Жигэ",
     portion: "Порц 1",
-    price: 11700
+    price: 11700,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/bansh.png?alt=media&token=443374a5-6021-4e82-b090-71619ba5fe56",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/bansh.png?alt=media&token=1bfd149d-e9aa-42d7-aad0-aa95fbc2ff71",
     name: "Банш",
     portion: "Порц 1",
-    price: 10200
+    price: 10200,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/bulgugi.png?alt=media&token=c35fd926-6138-4536-9934-b0758fb4683a",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/Bulgugi.png?alt=media&token=df6483dc-52c4-4358-9a36-91d5af194b2a",
     name: "Бүлгүги",
     portion: "Порц 1",
-    price: 13300
+    price: 13300,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/detroitPizza.png?alt=media&token=87347145-4837-41ff-83c1-6dd59ad222e1",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/detroitPizza.png?alt=media&token=bd91dfbc-5108-44b4-80b2-6dbe7b6ebccd",
     name: "Детройт пицца",
     portion: "Порц 3",
-    price: 25000
+    price: 25000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/foGaShol.png?alt=media&token=88c2327b-7725-4989-a7a6-5f2572ea40eb",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/foGaShol.png?alt=media&token=2daced0d-3a36-493f-924d-926b2ee7be76",
     name: "Фо Га Шөл",
     portion: "Порц 2",
-    price: 17000
+    price: 17000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/gahainMahtaiHuurga.png?alt=media&token=b7396e49-f932-4281-979b-3c85304b4bbd",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/gahainMahtaiHuurga.png?alt=media&token=012bfdca-0ba1-4a2f-b8ea-699d7dadca84",
     name: "Гахайн махтай хуурга",
     portion: "Порц 2",
-    price: 19700
+    price: 19700,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/humburger.png?alt=media&token=a61adcee-0295-4f59-a7c3-b2318a231ea4",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/humburger.png?alt=media&token=e2c7fe20-2b58-4f8e-96f3-bc2f190da00f",
     name: "Хамбургер",
     portion: "Порц 1",
-    price: 13900
+    price: 13900,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/lazany.png?alt=media&token=72542fd2-953a-4242-8217-736e36ab7d09",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/lazany.png?alt=media&token=018cbecf-13e4-4143-b20d-0dfa213a9404",
     name: "Лазанья",
     portion: "Порц 4",
-    price: 33500
+    price: 33500,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/misoRamen.png?alt=media&token=0642fd4c-48b8-4f92-8ba4-344a001a607d",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/misoRamen.png?alt=media&token=d2ba4e3b-a375-4118-b699-818e955333b4",
     name: "Мисо Рамен",
     portion: "Порц 1",
-    price: 15000
+    price: 15000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/omlet.png?alt=media&token=36743854-70dc-4a53-be72-f36e25ebca1b",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/omlet.png?alt=media&token=3c9cf219-e38b-44da-9f90-e6a074070466",
     name: "Омлет",
     portion: "Порц 1",
-    price: 9600
+    price: 9600,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/sharsanTahia.png?alt=media&token=b1389098-da4c-4a3c-8eab-7b605cae0b96",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/sharsanTahia.png?alt=media&token=df4a4038-a2d6-4abc-942e-d9da75b05b55",
     name: "Шарсан тахиа",
     portion: "Порц 2",
-    price: 39900
+    price: 39900,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/spaggetti.png?alt=media&token=83d4a45a-684b-49b8-a4f4-e1f81421c850",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/spaggetti.png?alt=media&token=0bc200bf-c323-4b85-9810-5b06304308a2",
     name: "Шпаггети",
     portion: "Порц 1",
-    price: 17000
+    price: 17000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tagturitan.png?alt=media&token=4ddbb1e3-2d6b-4121-af15-3ac8f6a1085b",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/takturitan.png?alt=media&token=5eae285d-5fc4-4c4a-be5e-703563d8787e",
     name: "Тактуритан",
     portion: "Порц 2",
-    price: 22000
+    price: 22000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tahianMah.png?alt=media&token=a5e38f73-c688-4eec-844b-a8d3f43acd26",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tahianMah.png?alt=media&token=ab85a100-e70e-4c05-9eae-00351ea15a8a",
     name: "Тахиан мах",
     portion: "Порц 1",
-    price: 17800
+    price: 17800,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tsuivan.png?alt=media&token=7225960d-1f50-4392-9f70-0e3c260433eb",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tsuivan.png?alt=media&token=0b53a7dd-75c0-488b-81ca-c3252961349c",
     name: "Цуйван",
     portion: "Порц 1",
-    price: 14300
+    price: 14300,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tunataiSalad.png?alt=media&token=2a878bda-6c5f-46ea-834a-180bd9dcac4e",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/tunataiSalad.png?alt=media&token=b4720d8f-e04b-48a5-aa62-f30c3b89f5ef",
     name: "Тунатай салад",
     portion: "Порц 1",
-    price: 18000
+    price: 18000,
   },
   {
     image:
-      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/ulaanLoiltoiShol.png?alt=media&token=25ade0ce-59a0-45e3-971c-5d103efbbc6d",
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/ulaanLoiltoiShol.png?alt=media&token=cffada3b-a6bb-4eb3-9968-173a7eb01d76",
     name: "Улаан лойлтой шөл",
     portion: "Порц 1",
-    price: 21000
-  }
+    price: 21000,
+  },
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/burjgarGoimon.png?alt=media&token=f14a216f-f947-4794-96d8-1f3cf65bfd13",
+    name: "Буржгар гоймон",
+    portion: "Порц 1",
+    price: 25000,
+  },
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/huluuniZutanShol.png?alt=media&token=30ee611c-a0ae-473e-b918-464a7d45b0d8",
+    name: "Хулууны зутан",
+    portion: "Порц 1",
+    price: 17000,
+  },
+  {
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/stake.png?alt=media&token=591aac6a-70ff-40ff-a66c-aeddaab65a5d",
+    name: "Стайк",
+    portion: "Порц 1",
+    price: 27000,
+  },
 ];
