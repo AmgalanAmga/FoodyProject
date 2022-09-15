@@ -6,8 +6,8 @@ import {
   signInWithPhoneNumber,
   RecaptchaVerifier,
   sendSignInLinkToEmail,
-  isSignInWithEmailLink,
-  signInWithEmailLink,
+  signOut,
+  signInWithEmailLink
 } from "firebase/auth";
 export const FirebaseContext = createContext();
 export const useAuthentication = () => {
@@ -15,6 +15,7 @@ export const useAuthentication = () => {
 };
 
 export const FirebaseProvider = ({ children }) => {
+  const [currentUser, setCurrentUser] = useState(null);
   const [verifyCodeSection, setVerifyCodeSection] = useState(false);
   const registerWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -26,7 +27,7 @@ export const FirebaseProvider = ({ children }) => {
     window.recaptchaVerifier = new RecaptchaVerifier(
       "recaptcha-container",
       {
-        size: "normal",
+        size: "normal"
       },
       auth
     );
@@ -51,33 +52,20 @@ export const FirebaseProvider = ({ children }) => {
       if (error) return alert("Таны оруулсан код буруу байна.");
     }
   };
-  const emailLinkAuth = (userEmail) => {
+  const emailLinkAuth = (userEmail, code) => {
     const actionCodeSettings = {
       url: "https://foody-483a1.web.app",
-      handleCodeInApp: true,
+      handleCodeInApp: true
     };
-    
+
     sendSignInLinkToEmail(auth, userEmail, actionCodeSettings).then(() => {
-      window.localStorage.setItem("emailForSignIn", userEmail);
-      console.log(userEmail)
-    }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode, errorMessage);
-    });;
-    if (isSignInWithEmailLink(auth, window.location.href)) {
-      let email = window.localStorage.getItem("emailForSignIn");
-      if (!email) {
-        email = window.prompt("И-мэйл хаягаа оруулна уу?");
-      }
-      signInWithEmailLink(auth, userEmail, window.location.href)
-        .then((result) => {
-          window.localStorage.removeItem("emailForSignIn");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
+      alert("И-мэйл хаягаа шалгаж баталгаажуулна уу?");
+    });
+
+    signInWithEmailLink(auth, userEmail, code).then((result) =>
+      setCurrentUser(result.user)
+    );
+    signOut(auth).then(() => setCurrentUser(null));
   };
   const value = {
     loginWithEmail,
@@ -86,7 +74,7 @@ export const FirebaseProvider = ({ children }) => {
     verifyCodeSection,
     setVerifyCodeSection,
     verifyMSGCode,
-    emailLinkAuth,
+    emailLinkAuth
   };
   return (
     <FirebaseContext.Provider value={value}>

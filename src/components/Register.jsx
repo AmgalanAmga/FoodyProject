@@ -57,7 +57,7 @@ export const Register = () => {
         mailOrPhoneRef.current.value,
         passwordRef.current.value
       );
-      alert("И-мэйл хаягаа шалгаж баталгаажуулна уу?")
+      
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Бүртгэлтэй хэрэглэгч байна 😡");

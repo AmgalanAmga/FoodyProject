@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AddIcon from "@mui/icons-material/Add";
-import { MainContext } from "../context/MainContext";
+import { MainContext } from "../../context/MainContext";
 import { Box, Typography, IconButton } from "@mui/material";
 export const FoodCart = ({ food }) => {
   const { setMenuOrderDetailOpen, setFoodCardDetailInfo } =

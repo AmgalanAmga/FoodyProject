@@ -9,7 +9,7 @@ import {
   ListItem,
   List
 } from "@mui/material";
-import { MainContext } from "../context/MainContext";
+import { MainContext } from "../../context/MainContext";
 import moment from "moment";
 export const OrderHistoryDetail = () => {
   const { detailOpen, setDetailOpen, orderHisDetail } = useContext(MainContext);

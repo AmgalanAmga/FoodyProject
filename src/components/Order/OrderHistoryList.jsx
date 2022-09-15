@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MainContext } from "../context/MainContext";
+import { MainContext } from "../../context/MainContext";
 import { Stack, Box, Typography, Divider, Link } from "@mui/material";
 import { OrderHistoryDetail } from "./OrderHistoryDetail";
 export const OrderHistoryList = () => {

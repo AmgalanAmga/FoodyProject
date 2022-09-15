@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Modal, Box, Typography, Grid } from "@mui/material";
-import { MainContext } from "../context/MainContext";
+import { MainContext } from "../../context/MainContext";
 export const MenuFoodDetailCard = () => {
   const { menuOrderDetailOpen, setMenuOrderDetailOpen, foodCardDetailInfo } =
     useContext(MainContext);

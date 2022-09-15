@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { foodDatas } from "../data";
-import { FoodCart } from "./FoodCart";
+import { FoodCart } from "./Food/FoodCart";
 import ellipse from "../images/Ellipse 22.png";
 import forkKnife from "../images/forkKnife.png";
 import {
@@ -10,10 +10,9 @@ import {
   MenuItem,
   InputLabel,
   Typography,
-  FormControl,
+  FormControl
 } from "@mui/material";
-import { MenuFoodDetailCard } from "./MenuFoodDetailCard";
-import { FoodOrderListTotalPrice } from "./FoodOrderListTotalPrice";
+import { MenuFoodDetailCard, FoodOrderListTotalPrice } from "../components";
 
 export const ChoosingMeal = () => {
   const [priceValue, setPriceValue] = useState("");
@@ -27,17 +26,17 @@ export const ChoosingMeal = () => {
         "Цагаан хоол",
         "Цавуулаггүй",
         "Хөнгөн хоол",
-        "Хүнд хоол",
+        "Хүнд хоол"
       ],
       func: (event) => setCategoryValue(event.target.value),
-      value: categoryValue,
+      value: categoryValue
     },
     {
       category: "Үнэ",
       options: ["Бүгд", "Хямдаас үнэтэй", "Үнэтэйгээс хямд"],
       func: (event) => setPriceValue(event.target.value),
-      value: priceValue,
-    },
+      value: priceValue
+    }
   ];
   return (
     <>
@@ -46,7 +45,7 @@ export const ChoosingMeal = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            alignItems: "center"
           }}
         >
           <Box sx={{ position: "relative", mt: "52px", mb: 2 }}>
@@ -59,7 +58,7 @@ export const ChoosingMeal = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "20px",
+                width: "20px"
               }}
             />
           </Box>
@@ -106,7 +105,7 @@ export const ChoosingMeal = () => {
           </Box>
         </Box>
       </Box>
-      <MenuFoodDetailCard/>
+      <MenuFoodDetailCard />
     </>
   );
 };
