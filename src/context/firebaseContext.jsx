@@ -4,7 +4,10 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
-  RecaptchaVerifier
+  RecaptchaVerifier,
+  sendSignInLinkToEmail,
+  isSignInWithEmailLink,
+  signInWithEmailLink,
 } from "firebase/auth";
 export const FirebaseContext = createContext();
 export const useAuthentication = () => {
@@ -23,7 +26,7 @@ export const FirebaseProvider = ({ children }) => {
     window.recaptchaVerifier = new RecaptchaVerifier(
       "recaptcha-container",
       {
-        size: "normal"
+        size: "normal",
       },
       auth
     );
@@ -48,13 +51,42 @@ export const FirebaseProvider = ({ children }) => {
       if (error) return alert("Таны оруулсан код буруу байна.");
     }
   };
+  const emailLinkAuth = (userEmail) => {
+    const actionCodeSettings = {
+      url: "https://foody-483a1.web.app",
+      handleCodeInApp: true,
+    };
+    
+    sendSignInLinkToEmail(auth, userEmail, actionCodeSettings).then(() => {
+      window.localStorage.setItem("emailForSignIn", userEmail);
+      console.log(userEmail)
+    }).catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode, errorMessage);
+    });;
+    if (isSignInWithEmailLink(auth, window.location.href)) {
+      let email = window.localStorage.getItem("emailForSignIn");
+      if (!email) {
+        email = window.prompt("И-мэйл хаягаа оруулна уу?");
+      }
+      signInWithEmailLink(auth, userEmail, window.location.href)
+        .then((result) => {
+          window.localStorage.removeItem("emailForSignIn");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
   const value = {
     loginWithEmail,
     registerWithEmail,
     registerWithPhone,
     verifyCodeSection,
     setVerifyCodeSection,
-    verifyMSGCode
+    verifyMSGCode,
+    emailLinkAuth,
   };
   return (
     <FirebaseContext.Provider value={value}>

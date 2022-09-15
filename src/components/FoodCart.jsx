@@ -17,7 +17,7 @@ export const FoodCart = ({ food }) => {
         height: "14rem",
         borderRadius: 2,
         position: "relative",
-        border: "1px solid #C4C4C4"
+        border: "1px solid #C4C4C4",
       }}
     >
       <img
@@ -27,7 +27,7 @@ export const FoodCart = ({ food }) => {
           position: "absolute",
           top: "-5%",
           left: "50%",
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
         }}
         alt="foodImage"
       />
@@ -36,7 +36,7 @@ export const FoodCart = ({ food }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
         }}
       >
         <Typography
@@ -61,7 +61,7 @@ export const FoodCart = ({ food }) => {
           bottom: "16px",
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
         }}
       >
         <Typography variant="h6">{food.price}₮</Typography>

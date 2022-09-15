@@ -8,7 +8,7 @@ export const MainProvider = ({ children }) => {
   const [indicatorIdx, setIndicatorIdx] = useState(0);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [orderHisDetail, setOrderHisDetail] = useState({});
-  const [foodCardDetailInfo, setFoodCardDetailInfo] = useState()
+  const [foodCardDetailInfo, setFoodCardDetailInfo] = useState({})
   const [menuOrderDetailOpen, setMenuOrderDetailOpen] = useState(false);
   const state = {
     dates,

@@ -5,17 +5,16 @@ import {
   Button,
   Checkbox,
   TextField,
-  FormGroup,
   IconButton,
   Typography,
-  FormControlLabel
+  FormControlLabel,
 } from "@mui/material";
 import {
   Mail,
   Close,
   RememberMe,
   PhoneIphone,
-  MailOutline
+  MailOutline,
 } from "@mui/icons-material";
 import { MainContext } from "../context/MainContext";
 import { useAuthentication } from "../context/firebaseContext";
@@ -27,7 +26,8 @@ export const Register = () => {
     registerWithEmail,
     registerWithPhone,
     verifyCodeSection,
-    verifyMSGCode
+    verifyMSGCode,
+    emailLinkAuth
   } = useAuthentication();
   const { registerOpen, setRegisterOpen, setLoginOpen } =
     useContext(MainContext);
@@ -36,7 +36,7 @@ export const Register = () => {
   );
   const [isChecked, setIsChecked] = useState({
     email: true,
-    phoneNumber: false
+    phoneNumber: false,
   });
   const handleClose = () => setRegisterOpen(false);
   const registerTypeHandler = (e) => {
@@ -52,11 +52,12 @@ export const Register = () => {
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {
+      emailLinkAuth(mailOrPhoneRef.current.value)
       await registerWithEmail(
         mailOrPhoneRef.current.value,
         passwordRef.current.value
       );
-      alert("Хэрэглэгч бүртгэгдлээ 😃");
+      alert("И-мэйл хаягаа шалгаж баталгаажуулна уу?")
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Бүртгэлтэй хэрэглэгч байна 😡");
@@ -98,7 +99,7 @@ export const Register = () => {
           borderRadius: 4,
           background: "#ffffff",
           position: "absolute",
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
         }}
       >
         <Box sx={{ position: "relative" }}>
@@ -114,14 +115,14 @@ export const Register = () => {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            rowGap: 1
+            rowGap: 1,
           }}
         >
           <Typography variant="h5" sx={{ fontWeight: 600 }}>
             Бүртгүүлэх
           </Typography>
           <Typography variant="p">
-            Та утасны дугаараараа эсвэд И-мэйл хаягаараа бүртгүүлнэ үү?
+            Та утасны дугаараараа эсвэл И-мэйл хаягаараа бүртгүүлнэ үү?
           </Typography>
           <Box sx={{ display: "flex", columnGap: 5 }}>
             <FormControlLabel
@@ -156,7 +157,7 @@ export const Register = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <TextField
@@ -180,7 +181,7 @@ export const Register = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  rowGap: 2
+                  rowGap: 2,
                 }}
               >
                 <Box id="recaptcha-container"></Box>

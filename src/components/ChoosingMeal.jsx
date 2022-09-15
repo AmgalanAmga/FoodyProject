@@ -10,11 +10,11 @@ import {
   MenuItem,
   InputLabel,
   Typography,
-  FormControl
+  FormControl,
 } from "@mui/material";
-
-import { FoodOrderListTotalPrice } from "./FoodOrderListTotalPrice";
 import { MenuFoodDetailCard } from "./MenuFoodDetailCard";
+import { FoodOrderListTotalPrice } from "./FoodOrderListTotalPrice";
+
 export const ChoosingMeal = () => {
   const [priceValue, setPriceValue] = useState("");
   const [categoryValue, setCategoryValue] = useState("");
@@ -27,19 +27,18 @@ export const ChoosingMeal = () => {
         "Цагаан хоол",
         "Цавуулаггүй",
         "Хөнгөн хоол",
-        "Хүнд хоол"
+        "Хүнд хоол",
       ],
       func: (event) => setCategoryValue(event.target.value),
-      value: categoryValue
+      value: categoryValue,
     },
     {
       category: "Үнэ",
       options: ["Бүгд", "Хямдаас үнэтэй", "Үнэтэйгээс хямд"],
       func: (event) => setPriceValue(event.target.value),
-      value: priceValue
-    }
+      value: priceValue,
+    },
   ];
-
   return (
     <>
       <Box sx={{ mt: "100px", borderTop: "1px solid #C4C4C4" }}>
@@ -47,7 +46,7 @@ export const ChoosingMeal = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Box sx={{ position: "relative", mt: "52px", mb: 2 }}>
@@ -60,7 +59,7 @@ export const ChoosingMeal = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "20px"
+                width: "20px",
               }}
             />
           </Box>
@@ -86,7 +85,7 @@ export const ChoosingMeal = () => {
                     onChange={select.func}
                   >
                     {select.options.map((option, j) => (
-                      <MenuItem key={j} value={10}>
+                      <MenuItem key={j} value={option}>
                         {option}
                       </MenuItem>
                     ))}
@@ -96,7 +95,7 @@ export const ChoosingMeal = () => {
             </Box>
             <Grid container columnSpacing={4} rowSpacing={12}>
               {foodDatas.map((food, k) => (
-                <Grid item xs={6} lg={3} key={k}>
+                <Grid item xs={6} md={3} lg={4} key={k}>
                   <FoodCart food={food} />
                 </Grid>
               ))}
@@ -107,7 +106,7 @@ export const ChoosingMeal = () => {
           </Box>
         </Box>
       </Box>
-      <MenuFoodDetailCard />
+      <MenuFoodDetailCard/>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Modal, Box } from "@mui/material";
+import { Modal, Box, Typography, Grid } from "@mui/material";
 import { MainContext } from "../context/MainContext";
 export const MenuFoodDetailCard = () => {
   const { menuOrderDetailOpen, setMenuOrderDetailOpen, foodCardDetailInfo } =
@@ -7,7 +7,6 @@ export const MenuFoodDetailCard = () => {
   const handleClose = () => {
     setMenuOrderDetailOpen(false);
   };
-  console.log(foodCardDetailInfo);
   return (
     <Modal open={menuOrderDetailOpen} onClose={handleClose}>
       <Box
@@ -20,9 +19,18 @@ export const MenuFoodDetailCard = () => {
           borderRadius: 4,
           position: "absolute",
           background: "#ffffff",
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
         }}
-      ></Box>
+      >
+        <Box>
+          <img src={foodCardDetailInfo.image} alt="" />
+        </Box>
+        <Typography variant="h4">{foodCardDetailInfo.name}</Typography>
+        <Typography variant="p">{foodCardDetailInfo.description}</Typography>
+        <Box >
+          
+        </Box>
+      </Box>
     </Modal>
   );
 };
