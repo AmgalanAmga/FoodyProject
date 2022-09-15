@@ -30,7 +30,7 @@ export const Login = () => {
     setLoginOpen(false);
   };
   const handleClose = () => setLoginOpen(false);
-  console.log(userDetail);
+  
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {

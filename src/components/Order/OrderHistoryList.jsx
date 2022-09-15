@@ -1,90 +1,40 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MainContext } from "../../context/MainContext";
 import { Stack, Box, Typography, Divider, Link } from "@mui/material";
 import { OrderHistoryDetail } from "./OrderHistoryDetail";
+import { fakeData } from "../../orderData";
 export const OrderHistoryList = () => {
-  const { setDetailOpen, setOrderHisDetail } = useContext(MainContext);
-  const fakeData = [
-    {
-      orderID: 1,
-      date: "2022-09-01",
-      status: "Хүргэгдсэн",
-      orders: [
-        {
-          productID: 156,
-          productName: "Кимчижигээ",
-          amount: 2,
-          price: 33400
-        },
-        { productID: 586, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо нэг хотхон нэр байр нь"
-    },
-    {
-      orderID: 2,
-      date: "2022-09-02",
-      status: "Савлагдсан",
-      orders: [
-        { productID: 98, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 45, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 2 хотхон нэр байр нь"
-    },
-    {
-      orderID: 3,
-      date: "2022-09-03",
-      status: "Алдаатай",
-      orders: [
-        { productID: 156, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 32, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 3 хотхон нэр байр нь"
-    },
-    {
-      orderID: 4,
-      date: "2022-09-04",
-      status: "Хүргэгдсэн",
-      orders: [
-        { productID: 75, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 596, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 4 хотхон нэр байр нь"
-    },
-    {
-      orderID: 5,
-      date: "2022-09-05",
-      status: "Савлагдсан",
-      orders: [
-        { productID: 56, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 54, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 5 хотхон нэр байр нь"
-    },
-    {
-      orderID: 6,
-      date: "2022-09-06",
-      status: "Алдаатай",
-      orders: [
-        { productID: 52, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 523, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 6 хотхон нэр байр нь"
-    },
-    {
-      orderID: 7,
-      date: "2022-09-07",
-      status: "Хүргэгдсэн",
-      orders: [
-        { productID: 152, productName: "Кимчижигээ", amount: 2, price: 33400 },
-        { productID: 123, productName: "Бүлгүги", amount: 1, price: 15000 }
-      ],
-      address: "СХД 40-р хороо 7 хотхон нэр байр нь"
-    }
-  ];
+  const [days, setDays] = useState([]);
+  const { setDetailOpen, setOrderHisDetail, dates } = useContext(MainContext);
   const getDetailInfo = (e, detail) => {
     setDetailOpen(true);
     setOrderHisDetail(detail);
   };
+  useEffect(() => {
+    const endDate = new Date(dates[1]);
+    const startDate = new Date(dates[0]);
+    const getDatesBetweenThem = (start, end) => {
+      const daysArray = [];
+      const date = new Date(start.getTime());
+      while (date <= end) {
+        daysArray.push(new Date(date));
+        date.setDate(date.getDate() + 1);
+      }
+      setDays(daysArray);
+    };
+    getDatesBetweenThem(startDate, endDate);
+  }, [dates]);
+  const collapsedDays = days.map((day) => day.toISOString().slice(0, 10));
+  useEffect(() => {
+    fakeData.filter((el) => {
+      collapsedDays.forEach((day) => {
+        if (day === el.date) {
+          console.log("yes");
+        }
+      });
+    });
+  }, [collapsedDays]);
+
   return (
     <>
       <Stack
@@ -93,25 +43,27 @@ export const OrderHistoryList = () => {
         width="900px"
         m="20px auto 0"
       >
-        {fakeData.map((el, i) => (
-          <Box
-            key={i}
-            sx={{
-              py: 3,
-              columnGap: 26,
-              display: "flex",
-              justifyContent: "center"
-            }}
-          >
-            <Typography variant="h6">{el.date}</Typography>
-            <Link
-              sx={{ fontSize: "20px" }}
-              onClick={(e) => getDetailInfo(e, el)}
+        {fakeData.map((el, i) => {
+          return (
+            <Box
+              key={i}
+              sx={{
+                py: 3,
+                columnGap: 26,
+                display: "flex",
+                justifyContent: "center"
+              }}
             >
-              Дэлгэрэнгүй
-            </Link>
-          </Box>
-        ))}
+              <Typography variant="h6">{el.date}</Typography>
+              <Link
+                sx={{ fontSize: "20px" }}
+                onClick={(e) => getDetailInfo(e, el)}
+              >
+                Дэлгэрэнгүй
+              </Link>
+            </Box>
+          );
+        })}
       </Stack>
       <OrderHistoryDetail />
     </>

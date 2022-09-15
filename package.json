@@ -28,7 +28,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "yarn build && firebase deploy"
-    
   },
   "eslintConfig": {
     "extends": [

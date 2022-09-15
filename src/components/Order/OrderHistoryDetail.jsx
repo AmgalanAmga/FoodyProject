@@ -1,22 +1,21 @@
 import { useContext } from "react";
-import { CloseIcon } from "@mui/icons-material";
 import {
   Modal,
   Box,
-  IconButton,
   Typography,
   ListItemText,
   ListItem,
+  ListItemAvatar,
+  Avatar,
   List
 } from "@mui/material";
-import { MainContext } from "../../context/MainContext";
 import moment from "moment";
+import { MainContext } from "../../context/MainContext";
 export const OrderHistoryDetail = () => {
   const { detailOpen, setDetailOpen, orderHisDetail } = useContext(MainContext);
   const { date, status, orders, address } = orderHisDetail;
   const handleClose = () => setDetailOpen(false);
   const weekDay = moment(date).isoWeekday();
-  console.log(orders);
   let weekDayName;
   switch (weekDay) {
     case 1:
@@ -41,6 +40,9 @@ export const OrderHistoryDetail = () => {
       weekDayName = "Ням гараг";
       break;
   }
+  const totalPrice = orders?.reduce((accum, el) => {
+    return accum + el.price;
+  }, 0);
   return (
     <div>
       <Modal open={detailOpen} onClose={handleClose}>
@@ -93,10 +95,24 @@ export const OrderHistoryDetail = () => {
                 {weekDayName}
               </Typography>
               <List>
-                <ListItem>
-                  <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-                </ListItem>
+                {orders?.map((el, i) => (
+                  <ListItem>
+                    <ListItemAvatar>
+                      <Avatar src={el.image} />
+                    </ListItemAvatar>
+                    <ListItemText
+                      primary={el.productName}
+                      secondary={`${el.amount}ш`}
+                    />
+                    <Typography variant="span" sx={{ ml: 4 }}>
+                      Үнэ: {el.price}₮
+                    </Typography>
+                  </ListItem>
+                ))}
               </List>
+              <Typography textAlign={"right"}>
+                Нийт үнэ: {totalPrice}₮
+              </Typography>
             </Box>
           </Box>
         </Box>
