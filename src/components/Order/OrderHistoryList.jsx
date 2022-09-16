@@ -5,7 +5,8 @@ import { OrderHistoryDetail } from "./OrderHistoryDetail";
 import { fakeData } from "../../orderData";
 export const OrderHistoryList = () => {
   const [days, setDays] = useState([]);
-  const { setDetailOpen, setOrderHisDetail, dates } = useContext(MainContext);
+  const { setDetailOpen, setOrderHisDetail, dates, dateSearch, setOrdersInRange, ordersInRange } =
+    useContext(MainContext);
   const getDetailInfo = (e, detail) => {
     setDetailOpen(true);
     setOrderHisDetail(detail);
@@ -29,12 +30,12 @@ export const OrderHistoryList = () => {
     fakeData.filter((el) => {
       collapsedDays.forEach((day) => {
         if (day === el.date) {
-          console.log("yes");
+          console.log(el);
+          setOrdersInRange((pre) => [...pre, el]);
         }
       });
     });
-  }, [collapsedDays]);
-
+  }, [dateSearch]);
   return (
     <>
       <Stack
@@ -43,7 +44,7 @@ export const OrderHistoryList = () => {
         width="900px"
         m="20px auto 0"
       >
-        {fakeData.map((el, i) => {
+        {ordersInRange.map((el, i) => {
           return (
             <Box
               key={i}
@@ -51,7 +52,7 @@ export const OrderHistoryList = () => {
                 py: 3,
                 columnGap: 26,
                 display: "flex",
-                justifyContent: "center"
+                justifyContent: "center",
               }}
             >
               <Typography variant="h6">{el.date}</Typography>

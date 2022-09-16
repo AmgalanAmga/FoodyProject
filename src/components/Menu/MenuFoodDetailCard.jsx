@@ -27,8 +27,13 @@ export const MenuFoodDetailCard = () => {
         </Box>
         <Typography variant="h4">{foodCardDetailInfo.name}</Typography>
         <Typography variant="p">{foodCardDetailInfo.description}</Typography>
-        <Box >
-          
+        <Box>
+          {foodCardDetailInfo.recipe?.map((el, i) => (
+            <Box>
+              <Typography variant="span">{el.ingredient}</Typography>
+              <Typography variant="span">{el.amount}</Typography>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Modal>
