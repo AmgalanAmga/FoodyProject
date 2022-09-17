@@ -1,3 +1,11 @@
+import salt from "./images/salt.jpg";
+import pork from "./images/pork.png";
+import onion from "./images/onion.png";
+import spice from "./images/spice.jpg";
+import kimchi from "./images/kimchi.jpg";
+import garlic from "./images/garlic.png";
+import greenOnion from "./images/greenOnion.png";
+
 export const foodDatas = [
   {
     image:
@@ -5,15 +13,16 @@ export const foodDatas = [
     name: "Кимчи Жигэ",
     portion: "Порц 1",
     price: 11700,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Амталгаагаар", icon: salt }
     ]
   },
   {
@@ -22,15 +31,16 @@ export const foodDatas = [
     name: "Банш",
     portion: "Порц 1",
     price: 10200,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Монголчууд Цагаан сарын шинийн нэгний өмнөх өдөр битүүний өдөр банш, бууз хийж иддэг уламжлалтай. Баншийг хохимой толгойг билэгдэж бөөрөнхий бөндгөр чимхэнэ. Сар шинийн өмнөх орой буюу хуучин он солигдох мөчид хүний орчлонгоор ирэхэд хүмүүс өөрсдийнх нь толгойг идэн баярлалдан суухыг хараад айж буцдаг гэсэн домогтой холбоотой.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Амталгаагаар", icon: salt }
     ]
   },
   {
@@ -39,15 +49,16 @@ export const foodDatas = [
     name: "Бүлгүги",
     portion: "Порц 1",
     price: 13300,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Bulgogi  literally fire meat, is a gui made of thin, marinated slices of meat, most commonly beef, grilled on a barbecue or on a stove-top griddle. It is also often stir-fried in a pan in home cooking.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -56,15 +67,16 @@ export const foodDatas = [
     name: "Детройт пицца",
     portion: "Порц 3",
     price: 25000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -73,15 +85,16 @@ export const foodDatas = [
     name: "Фо Га Шөл",
     portion: "Порц 2",
     price: 17000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -90,15 +103,16 @@ export const foodDatas = [
     name: "Гахайн махтай хуурга",
     portion: "Порц 2",
     price: 19700,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -107,15 +121,16 @@ export const foodDatas = [
     name: "Хамбургер",
     portion: "Порц 1",
     price: 13900,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -124,15 +139,16 @@ export const foodDatas = [
     name: "Лазанья",
     portion: "Порц 4",
     price: 33500,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -141,15 +157,16 @@ export const foodDatas = [
     name: "Мисо Рамен",
     portion: "Порц 1",
     price: 15000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -158,15 +175,16 @@ export const foodDatas = [
     name: "Омлет",
     portion: "Порц 1",
     price: 9600,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -175,15 +193,16 @@ export const foodDatas = [
     name: "Шарсан тахиа",
     portion: "Порц 2",
     price: 39900,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -192,15 +211,16 @@ export const foodDatas = [
     name: "Шпаггети",
     portion: "Порц 1",
     price: 17000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -209,15 +229,16 @@ export const foodDatas = [
     name: "Тактуритан",
     portion: "Порц 2",
     price: 22000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -226,15 +247,16 @@ export const foodDatas = [
     name: "Тахиан мах",
     portion: "Порц 1",
     price: 17800,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -243,15 +265,16 @@ export const foodDatas = [
     name: "Цуйван",
     portion: "Порц 1",
     price: 14300,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -260,15 +283,16 @@ export const foodDatas = [
     name: "Тунатай салад",
     portion: "Порц 1",
     price: 18000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -277,15 +301,16 @@ export const foodDatas = [
     name: "Улаан лойлтой шөл",
     portion: "Порц 1",
     price: 21000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -294,15 +319,16 @@ export const foodDatas = [
     name: "Буржгар гоймон",
     portion: "Порц 1",
     price: 25000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -311,15 +337,16 @@ export const foodDatas = [
     name: "Хулууны зутан",
     portion: "Порц 1",
     price: 17000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
   },
   {
@@ -328,15 +355,16 @@ export const foodDatas = [
     name: "Стайк",
     portion: "Порц 1",
     price: 27000,
-    description: "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
+    description:
+      "Kimchi stew is one of the most-loved of all the stews in Korean cuisine. It’s a warm, hearty, spicy, savory, delicious dish that pretty much everyone loves. As long as they can handle spicy food, I never met a person who didn’t like kimchi-jjigae.",
     recipe: [
-      {ingredient:"Болсон кимчи", amount:'300г'},
-      {ingredient:"Гахайн мах ", amount:"200г"},
-      {ingredient:"Бяцалсан сармис ", amount:'1-2 хумс'},
-      {ingredient:"Бөөрөнхий сонгино", amount:'1/4ш'},
-      {ingredient:"Ногоон сонгино", amount:'1ш'},
-      {ingredient:"Халуун чинжүү", amount:'1ш'},
-      {ingredient:"Давс", amount:'Амталгаагаар'},
+      { ingredient: "Болсон кимчи", amount: "300г", icon: kimchi },
+      { ingredient: "Гахайн мах ", amount: "200г", icon: pork },
+      { ingredient: "Бяцалсан сармис ", amount: "1-2 хумс", icon: garlic },
+      { ingredient: "Бөөрөнхий сонгино", amount: "1/4ш", icon: onion },
+      { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
+      { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
+      { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
     ]
-  },
+  }
 ];

@@ -25,6 +25,7 @@ export const OrderHistoryList = () => {
     };
     getDatesBetweenThem(startDate, endDate);
   }, [dates]);
+  console.log(days);
   const collapsedDays = days.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {
     fakeData.filter((el) => {

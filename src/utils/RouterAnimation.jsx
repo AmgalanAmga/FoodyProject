@@ -14,3 +14,11 @@ export const MenuMainRouterAnimation = () => {
     transition: { duration: 0.5, ease: "easeInOut" }
   };
 };
+export const foodPageChanging = () => {
+  return {
+    initial: { opacity: 0, y: "-100px" },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: "-100px" },
+    transition: { duration: 0.5, ease: "easeInOut" }
+  };
+};

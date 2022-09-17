@@ -5,14 +5,14 @@ import moment from "moment";
 import { Box, Button } from "@mui/material";
 import { MainContext } from "../../context/MainContext";
 export const OrderCalendar = () => {
-  const { setDates, setDateSearch,setOrdersInRange } = useContext(MainContext);
+  const { setDates, setDateSearch, setOrdersInRange } = useContext(MainContext);
   const { RangePicker } = DatePicker;
   const searchBtn = (e) => {
     setDateSearch(true);
   };
   const showDates = (values) => {
-    setDateSearch(false)
-    setOrdersInRange([])
+    setDateSearch(false);
+    setOrdersInRange([]);
     setDates(
       values.map((item) => {
         return moment(item).format("YYYY-MM-DD");
@@ -26,7 +26,7 @@ export const OrderCalendar = () => {
         mx: "auto",
         width: "500px",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "center"
       }}
     >
       <RangePicker

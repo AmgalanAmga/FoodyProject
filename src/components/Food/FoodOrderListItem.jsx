@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   ListItem,
   ListItemAvatar,
@@ -8,21 +8,31 @@ import {
   Box,
   Typography
 } from "@mui/material";
-import { Add, Remove } from "@mui/icons-material";
-export const FoodOrderListItem = () => {
+import { Add, Remove, Delete } from "@mui/icons-material";
+export const FoodOrderListItem = ({ order }) => {
+  const [amountCounter, setAmountCounter] = useState(1);
+  const increaseAmount = (e) => {
+    setAmountCounter(amountCounter + 1);
+  };
+  const descreseAmount = (e) => {
+    setAmountCounter(amountCounter - 1);
+  };
   return (
     <ListItem>
       <ListItemAvatar>
-        <Avatar src="https://firebasestorage.googleapis.com/v0/b/foody-483a1.appspot.com/o/kimchiJige.png?alt=media&token=f4b13237-abab-46d6-8092-97d7005beff2" />
+        <Avatar src={order.foodImage} />
       </ListItemAvatar>
-      <ListItemText primary="Кимчи Жигэ" secondary="11700₮" />
+      <ListItemText primary={order.foodName} secondary={`${order.price}₮`} />
       <Box sx={{ display: "flex", alignItems: "center", columnGap: 3 }}>
-        <IconButton>
+        <IconButton onClick={descreseAmount}>
           <Remove />
         </IconButton>
-        <Typography>2ш</Typography>
-        <IconButton>
+        <Typography>{`${amountCounter}ш`}</Typography>
+        <IconButton onClick={increaseAmount}>
           <Add />
+        </IconButton>
+        <IconButton>
+          <Delete />
         </IconButton>
       </Box>
     </ListItem>

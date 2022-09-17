@@ -90,6 +90,7 @@ export const MainHowOrderDelivered = () => {
       <Box sx={{ display: "flex", columnGap: "40px", my: "50px" }}>
         {clocks.map((clock, i) => (
           <Box
+            key={i}
             sx={{
               width: "140px",
               height: "140px",

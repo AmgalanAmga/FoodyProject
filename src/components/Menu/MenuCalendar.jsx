@@ -1,15 +1,30 @@
-import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Grid, Typography, Box } from "@mui/material";
+import { MainContext } from "../../context/MainContext";
+
 export const MenuCalendar = () => {
+  const { setMonthWeekdays } = useContext(MainContext);
   const year = new Date().getFullYear();
   const month = new Date().getMonth() + 1;
   const getDays = (year, month) => {
     return new Date(year, month, 0).getDate();
   };
-  const a = ["1 - 8", "8 - 15", "15 - 22", "22 - 29"];
+  const a = ["1 - 7", "8 - 14", "15 - 21", "22 - 28"];
   const days = getDays(year, month);
   const weekArray = new Array(Math.floor(days / 7)).fill(a);
+  const whichWeek = (e, week) => {
+    const chosenDays = week.split("-");
+    const choseDaysArray = [];
+    const startDay = new Date(`${year}-${month}-${chosenDays[0]}`);
+    const endDay = new Date(`${year}-${month}-${chosenDays[1]}`);
+    const getDate = new Date(startDay.getTime());
+    while (getDate <= endDay) {
+      choseDaysArray.push(new Date(getDate));
+      getDate.setDate(getDate.getDate() + 1);
+    }
+    setMonthWeekdays(choseDaysArray);
+  };
   return (
     <Box
       sx={{
@@ -59,6 +74,7 @@ export const MenuCalendar = () => {
             </Typography>
             <Link
               to="/menuMain"
+              onClick={(e) => whichWeek(e, week[idx])}
               style={{
                 fontSize: "32px",
                 color: "#66B60F",

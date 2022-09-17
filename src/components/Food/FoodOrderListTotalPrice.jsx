@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import {
   List,
   Stack,
@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 import { FoodOrderListItem } from "./FoodOrderListItem";
+import { MainContext } from "../../context/MainContext";
 const weekdays = [
   "Даваа",
   "Мягмар",
@@ -19,6 +20,8 @@ const weekdays = [
   "Ням"
 ];
 export const FoodOrderListTotalPrice = () => {
+  const { myOrderedMeals } = useContext(MainContext);
+  console.log(myOrderedMeals);
   return (
     <Stack direction={"column"} sx={{ position: "fixed", width: "45%" }}>
       {weekdays.map((day, i) => (
@@ -27,9 +30,11 @@ export const FoodOrderListTotalPrice = () => {
             <Typography>{day}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <List>
-              <FoodOrderListItem />
-            </List>
+            {myOrderedMeals.map((order) => (
+              <List>
+                <FoodOrderListItem order={order} />
+              </List>
+            ))}
           </AccordionDetails>
         </Accordion>
       ))}
