@@ -17,7 +17,6 @@ import { MenuFoodDetailCard, FoodOrderListTotalPrice } from "../components";
 export const ChoosingMeal = () => {
   const [priceValue, setPriceValue] = useState("");
   const [categoryValue, setCategoryValue] = useState("");
-
   const selectArray = [
     {
       category: "Ангилах",
@@ -39,7 +38,7 @@ export const ChoosingMeal = () => {
     }
   ];
   return (
-    <>
+    <div>
       <Box sx={{ mt: "100px", borderTop: "1px solid #C4C4C4" }}>
         <Box
           sx={{
@@ -106,6 +105,6 @@ export const ChoosingMeal = () => {
         </Box>
       </Box>
       <MenuFoodDetailCard />
-    </>
+    </div>
   );
 };

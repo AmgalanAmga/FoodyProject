@@ -1,35 +1,20 @@
-import { useContext, useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { foodPageChanging } from "../../utils/RouterAnimation";
-import { Grid, FormControlLabel, Checkbox, Typography } from "@mui/material";
 import { LocalDining } from "@mui/icons-material";
+import { useContext, useState, useEffect } from "react";
 import { MainContext } from "../../context/MainContext";
+import { foodPageChanging } from "../../utils/RouterAnimation";
+import { weekdays, weekdaysCodes } from "../../utils/UsefulArrays";
+import { Grid, FormControlLabel, Checkbox, Typography } from "@mui/material";
+
 export const MenuFoodDetailCard2 = () => {
-  const [convertArrIntoObj, setConvertArrIntoObj] = useState([]);
-  const { monthWeekDays, setMyOrderedMeals } =
-    useContext(MainContext);
   const page = foodPageChanging();
-  const weekdays = [
-    "Даваа",
-    "Мягмар",
-    "Лхагва",
-    "Пүрэв",
-    "Баасан",
-    "Бямба",
-    "Ням"
-  ];
-  const weekdaysCodes = {
-    Mon: 1,
-    Tue: 2,
-    Wed: 3,
-    Thu: 4,
-    Fri: 5,
-    Sat: 6,
-    Sun: 7
-  };
+  const [convertArrIntoObj, setConvertArrIntoObj] = useState([]);
+  const { monthWeekDays, setMyOrderedMeals } = useContext(MainContext);
+
   const getWeekdayLetter = monthWeekDays.map((day) =>
     day.toString().slice(0, 3)
   );
+
   const dates = monthWeekDays.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {
     setConvertArrIntoObj(
@@ -38,9 +23,11 @@ export const MenuFoodDetailCard2 = () => {
       })
     );
   }, []);
+
   convertArrIntoObj.sort((a, b) => {
     return weekdaysCodes[a.day] - weekdaysCodes[b.day];
   });
+
   const storeChosenMeals = (e, date, weekday) => {
     setMyOrderedMeals((preStates) =>
       preStates.map((state) => {
@@ -54,6 +41,7 @@ export const MenuFoodDetailCard2 = () => {
       })
     );
   };
+
   return (
     <motion.div
       initial={page.initial}

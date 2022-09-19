@@ -1,15 +1,18 @@
 import "antd/dist/antd.css";
-import { useContext } from "react";
-import { DatePicker } from "antd";
 import moment from "moment";
+import { DatePicker } from "antd";
+import { useContext } from "react";
 import { Box, Button } from "@mui/material";
 import { MainContext } from "../../context/MainContext";
+
 export const OrderCalendar = () => {
-  const { setDates, setDateSearch, setOrdersInRange } = useContext(MainContext);
   const { RangePicker } = DatePicker;
+  const { setDates, setDateSearch, setOrdersInRange } = useContext(MainContext);
+
   const searchBtn = (e) => {
     setDateSearch(true);
   };
+
   const showDates = (values) => {
     setDateSearch(false);
     setOrdersInRange([]);
@@ -19,6 +22,7 @@ export const OrderCalendar = () => {
       })
     );
   };
+
   return (
     <Box
       sx={{

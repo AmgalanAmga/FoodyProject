@@ -3,34 +3,28 @@ import AddIcon from "@mui/icons-material/Add";
 import { MainContext } from "../../context/MainContext";
 import { Box, Typography, IconButton, Modal } from "@mui/material";
 export const FoodCart = ({ food }) => {
+  const [existingFood, setExistingFood] = useState(false);
   const {
     myOrderedMeals,
-    setMenuOrderDetailOpen,
+    setMyOrderedMeals,
     setFoodCardDetailInfo,
-    setMyOrderedMeals
+    setMenuOrderDetailOpen
   } = useContext(MainContext);
-  const [existingFood, setExistingFood] = useState(false);
   const closeHandle = () => {
     setExistingFood(false);
   };
   const showFoodInfo = () => {
-    // for (let i = 0; i <= myOrderedMeals.length; i++) {
-    //   if (myOrderedMeals[i].foodName === myOrderedMeals[i + 1].foodName) {
-    //     setExistingFood(true);
-    //   } else {
-        setMyOrderedMeals((pre) => [
-          ...pre,
-          {
-            foodName: food.name,
-            foodImage: food.image,
-            price: food.price,
-            orderedFoodsDates: []
-          }
-        ]);
-        setMenuOrderDetailOpen(true);
-        setFoodCardDetailInfo(food);
-      // }
-    // }
+    setMyOrderedMeals((pre) => [
+      ...pre,
+      {
+        foodName: food.name,
+        foodImage: food.image,
+        price: food.price,
+        orderedFoodsDates: []
+      }
+    ]);
+    setMenuOrderDetailOpen(true);
+    setFoodCardDetailInfo(food);
   };
   return (
     <>

@@ -1,5 +1,8 @@
-import { useContext, useState } from "react";
 import { motion } from "framer-motion";
+import { useContext, useState } from "react";
+import { MainContext } from "../../context/MainContext";
+import { MenuFoodDetailCard2 } from "./MenuFoodDetailCard2";
+import { foodPageChanging } from "../../utils/RouterAnimation";
 import {
   Box,
   Grid,
@@ -11,26 +14,26 @@ import {
   AccordionSummary,
   AccordionDetails
 } from "@mui/material";
-import { MainContext } from "../../context/MainContext";
-import { foodPageChanging } from "../../utils/RouterAnimation";
-import { MenuFoodDetailCard2 } from "./MenuFoodDetailCard2";
+
 export const MenuFoodDetailCard = () => {
   const page = foodPageChanging();
-  const {
-    menuOrderDetailOpen,
-    setMenuOrderDetailOpen,
-    setMyOrderedMeals,
-    foodCardDetailInfo,
-    myOrderedMeals
-  } = useContext(MainContext);
   const [next, setNext] = useState(false);
   const [continueClickCounter, setContinueClickCounter] = useState(0);
+  const {
+    myOrderedMeals,
+    setMyOrderedMeals,
+    foodCardDetailInfo,
+    menuOrderDetailOpen,
+    setMenuOrderDetailOpen
+  } = useContext(MainContext);
+
   const handleClose = () => {
     setMenuOrderDetailOpen(false);
     setNext(false);
     setMyOrderedMeals([]);
     setContinueClickCounter(0);
   };
+
   const nextBtnClicked = (e) => {
     if (continueClickCounter !== 1) {
       setContinueClickCounter(continueClickCounter + 1);
@@ -41,6 +44,7 @@ export const MenuFoodDetailCard = () => {
       setNext(false);
     }
   };
+
   return (
     <Modal open={menuOrderDetailOpen} onClose={handleClose}>
       <Box

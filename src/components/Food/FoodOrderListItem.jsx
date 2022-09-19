@@ -1,20 +1,21 @@
 import { useState } from "react";
 import {
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Avatar,
-  IconButton,
   Box,
-  Typography
+  Avatar,
+  ListItem,
+  Typography,
+  IconButton,
+  ListItemText,
+  ListItemAvatar
 } from "@mui/material";
 import { Add, Remove, Delete } from "@mui/icons-material";
+
 export const FoodOrderListItem = ({ order }) => {
   const [amountCounter, setAmountCounter] = useState(1);
   const increaseAmount = (e) => {
     setAmountCounter(amountCounter + 1);
   };
-  const descreseAmount = (e) => {
+  const decreaseAmount = (e) => {
     setAmountCounter(amountCounter - 1);
   };
   return (
@@ -24,7 +25,7 @@ export const FoodOrderListItem = ({ order }) => {
       </ListItemAvatar>
       <ListItemText primary={order.foodName} secondary={`${order.price}₮`} />
       <Box sx={{ display: "flex", alignItems: "center", columnGap: 3 }}>
-        <IconButton onClick={descreseAmount}>
+        <IconButton onClick={decreaseAmount}>
           <Remove />
         </IconButton>
         <Typography>{`${amountCounter}ш`}</Typography>

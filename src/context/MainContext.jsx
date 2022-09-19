@@ -3,12 +3,13 @@ export const MainContext = createContext();
 export const MainProvider = ({ children }) => {
   const [dates, setDates] = useState([]);
   const [userDetail, setUserDetail] = useState();
+  const [activeStep, setActiveStep] = useState(0);
   const [loginOpen, setLoginOpen] = useState(false);
   const [dateSearch, setDateSearch] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
   const [indicatorIdx, setIndicatorIdx] = useState(0);
   const [monthWeekDays, setMonthWeekdays] = useState([]);
-  const [myOrderedMeals, setMyOrderedMeals] = useState([])
+  const [myOrderedMeals, setMyOrderedMeals] = useState([]);
   const [ordersInRange, setOrdersInRange] = useState([]);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [orderHisDetail, setOrderHisDetail] = useState({});
@@ -21,12 +22,14 @@ export const MainProvider = ({ children }) => {
     userDetail,
     dateSearch,
     detailOpen,
+    activeStep,
     setLoginOpen,
     registerOpen,
     indicatorIdx,
     setUserDetail,
     setDetailOpen,
     setDateSearch,
+    setActiveStep,
     ordersInRange,
     monthWeekDays,
     orderHisDetail,
@@ -40,7 +43,7 @@ export const MainProvider = ({ children }) => {
     foodCardDetailInfo,
     menuOrderDetailOpen,
     setFoodCardDetailInfo,
-    setMenuOrderDetailOpen,
+    setMenuOrderDetailOpen
   };
   return <MainContext.Provider value={state}>{children}</MainContext.Provider>;
 };

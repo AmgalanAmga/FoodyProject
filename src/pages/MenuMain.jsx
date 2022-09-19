@@ -1,7 +1,12 @@
-import { useState, useContext, useEffect } from "react";
 import { motion } from "framer-motion";
-import { MainContext } from "../context/MainContext";
 import { useLocation } from "react-router-dom";
+import { MainContext } from "../context/MainContext";
+import {
+  ChoosingMeal,
+  VerifyMyOrder,
+  InformationOfAddress
+} from "../components";
+import { useContext, useEffect } from "react";
 import { MenuMainRouterAnimation } from "../utils/RouterAnimation";
 import {
   Box,
@@ -13,12 +18,11 @@ import {
   Typography,
   StepConnector
 } from "@mui/material";
-import { ChoosingMeal } from "../components";
 
 export const MenuMain = () => {
-  const { setIndicatorIdx } = useContext(MainContext);
+  const { setIndicatorIdx, activeStep, setActiveStep } =
+    useContext(MainContext);
   const { pathname } = useLocation();
-  const [activeStep, setActiveStep] = useState(0);
   const router = MenuMainRouterAnimation();
   const steps = [
     "Хоолоо сонгох",
@@ -29,6 +33,20 @@ export const MenuMain = () => {
   useEffect(() => {
     if (pathname === "/menuMain") return setIndicatorIdx(2);
   }, [pathname]);
+
+  const stepContent = (step) => {
+    switch (step) {
+      case 0:
+        return <ChoosingMeal />;
+      case 1:
+        return <InformationOfAddress />;
+      case 2:
+        return <VerifyMyOrder />;
+      default:
+        return;
+    }
+  };
+
   return (
     <motion.div
       initial={router.initial}
@@ -55,7 +73,11 @@ export const MenuMain = () => {
             })}
           </Stepper>
         </Box>
-        <ChoosingMeal />
+        {activeStep === steps.length ? (
+          <Typography>Thanks</Typography>
+        ) : (
+          <>{stepContent(activeStep)}</>
+        )}
       </Box>
     </motion.div>
   );
