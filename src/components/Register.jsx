@@ -52,12 +52,12 @@ export const Register = () => {
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {
-      emailLinkAuth(mailOrPhoneRef.current.value)
+      // emailLinkAuth(mailOrPhoneRef.current.value)
       await registerWithEmail(
         mailOrPhoneRef.current.value,
         passwordRef.current.value
       );
-      
+      alert("Хэрэглэгч бүртгэгдлээ 😃")
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Бүртгэлтэй хэрэглэгч байна 😡");

@@ -2,9 +2,10 @@ import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { MainContext } from "../context/MainContext";
 import {
+  Payment,
   ChoosingMeal,
   VerifyMyOrder,
-  InformationOfAddress
+  InformationOfAddress,
 } from "../components";
 import { useContext, useEffect } from "react";
 import { MenuMainRouterAnimation } from "../utils/RouterAnimation";
@@ -16,7 +17,7 @@ import {
   Stepper,
   StepLabel,
   Typography,
-  StepConnector
+  StepConnector,
 } from "@mui/material";
 
 export const MenuMain = () => {
@@ -28,7 +29,7 @@ export const MenuMain = () => {
     "Хоолоо сонгох",
     "Хүргэлтийн мэдээлэл",
     "Утасны дугаараа баталгаажуулах",
-    "Төлбөр төлөх"
+    "Төлбөр төлөх",
   ];
   useEffect(() => {
     if (pathname === "/menuMain") return setIndicatorIdx(2);
@@ -43,7 +44,7 @@ export const MenuMain = () => {
       case 2:
         return <VerifyMyOrder />;
       default:
-        return;
+        return <Payment />;
     }
   };
 
@@ -59,7 +60,7 @@ export const MenuMain = () => {
         style={{
           width: "90%",
           margin: "0 auto",
-          minHeight: "100vh"
+          minHeight: "100vh",
         }}
       >
         <Box sx={{ width: "100%" }}>
