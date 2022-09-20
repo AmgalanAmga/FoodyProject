@@ -1,14 +1,16 @@
 import { useState, useRef, useContext, useEffect } from "react";
 import { provinces } from "../../utils/UsefulArrays";
 import {
-  TextField,
   Box,
+  Stack,
+  Button,
+  TextField,
+  IconButton,
   Typography,
   Autocomplete,
-  Stack,
-  Button
 } from "@mui/material";
 import { MainContext } from "../../context/MainContext";
+import { ArrowRight, ArrowLeft } from "@mui/icons-material";
 
 export const InformationOfAddress = () => {
   const khorooRef = useRef();
@@ -20,7 +22,7 @@ export const InformationOfAddress = () => {
     city: "",
     district: "",
     khoroo: "",
-    detail: ""
+    detail: "",
   });
   const chosenOption = (e, value) => {
     setCity(value);
@@ -33,7 +35,7 @@ export const InformationOfAddress = () => {
       city: city.provinceName,
       district: soumValue,
       khoroo: khorooRef.current.value,
-      detail: detailRef.current.value
+      detail: detailRef.current.value,
     });
     setActiveStep(activeStep + 1);
   };
@@ -49,12 +51,16 @@ export const InformationOfAddress = () => {
         display: "flex",
         alignItems: "center",
         mt: 4,
-        flexDirection: "column"
+        flexDirection: "column",
       }}
     >
-      <Typography variant="h5" mb={2}>
-        Хүргэлтийн мэдээлэл
-      </Typography>
+      <Stack direction={"row"} sx={{width:500, background:"red"}}>
+        <IconButton><ArrowLeft/></IconButton>
+        <Typography variant="h5" mb={2}>
+          Хүргэлтийн мэдээлэл
+        </Typography>
+        <IconButton><ArrowRight/></IconButton>
+      </Stack>
       <Stack direction={"column"} spacing={2}>
         <Autocomplete
           disableClearable
