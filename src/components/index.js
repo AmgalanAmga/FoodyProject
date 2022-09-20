@@ -3,6 +3,7 @@ export * from "./Navbar";
 export * from "./Register";
 export * from "./ConfirmForm";
 export * from "./ChoosingMeal";
+export * from "./Order/Payment";
 export * from "./Food/FoodCart";
 export * from "./WeekdaysAndPrice";
 export * from "./MainPage/MainLeft";

@@ -24,12 +24,15 @@ export const InformationOfAddress = () => {
     khoroo: "",
     detail: "",
   });
-  const chosenOption = (e, value) => {
+  const optionChange = (e, value) => {
     setCity(value);
+    setSoumValue(value.soums);
   };
-  const choseSoumOption = (e, value) => {
-    setSoumValue(value);
+  const inputsChange = (e) => {
+    const { id, value } = e.target;
+    setInfoAddress({ ...infoAddress, [id]: value });
   };
+
   const clickContinue = () => {
     setInfoAddress({
       city: city.provinceName,
@@ -42,31 +45,53 @@ export const InformationOfAddress = () => {
   const backButton = () => {
     setActiveStep(activeStep - 1);
   };
-  useEffect(() => {}, []);
-  console.log();
+  console.log(infoAddress);
   return (
     <Box
       sx={{
-        minHeight: "90vh",
-        display: "flex",
-        alignItems: "center",
         mt: 4,
+        display: "flex",
+        minHeight: "90vh",
+        alignItems: "center",
         flexDirection: "column",
       }}
     >
-      <Stack direction={"row"} sx={{width:500, background:"red"}}>
-        <IconButton><ArrowLeft/></IconButton>
+      <Stack direction={"row"}>
+        <IconButton
+          sx={{
+            mx: 4,
+            width: 40,
+            height: 40,
+            borderRadius: 2,
+            border: "1px solid gray",
+          }}
+          onClick={backButton}
+        >
+          <ArrowLeft />
+        </IconButton>
         <Typography variant="h5" mb={2}>
           Хүргэлтийн мэдээлэл
         </Typography>
-        <IconButton><ArrowRight/></IconButton>
+        <IconButton
+          onClick={clickContinue}
+          disabled={infoAddress.detail === "" || infoAddress.khoroo === ""}
+          sx={{
+            mx: 4,
+            borderRadius: 2,
+            border: "1px solid gray",
+            width: 40,
+            height: 40,
+          }}
+        >
+          <ArrowRight />
+        </IconButton>
       </Stack>
       <Stack direction={"column"} spacing={2}>
         <Autocomplete
           disableClearable
           sx={{ width: 300 }}
           options={provinces}
-          onChange={chosenOption}
+          onChange={optionChange}
           getOptionLabel={(option) => option.provinceName}
           renderInput={(provinces) => (
             <TextField {...provinces} label="Хот/Аймаг" />
@@ -74,34 +99,34 @@ export const InformationOfAddress = () => {
         />
         <Autocomplete
           sx={{ width: 300 }}
-          onChange={choseSoumOption}
+          onChange={optionChange}
           options={city.soums || []}
           renderInput={(soums) => <TextField {...soums} label="Дүүрэг/Сум" />}
         />
         <TextField
+          id="khoroo"
           inputRef={khorooRef}
+          onChange={inputsChange}
           type={"text"}
           autoComplete="off"
           label="Хороо..."
         />
         <TextField
           inputRef={detailRef}
+          onChange={inputsChange}
+          id="detail"
           type={"text"}
           autoComplete="off"
           label="Хаягийн нарийн мэдээлэл..."
         />
-        <Stack direction={"row"} justifyContent="space-between">
-          <Button variant="contained" onClick={backButton}>
-            Буцах
-          </Button>
-          <Button
-            disabled={!infoAddress}
-            onClick={clickContinue}
-            variant="contained"
-          >
-            Үргэлжлүүлэх
-          </Button>
-        </Stack>
+
+        <Button
+          disabled={infoAddress.detail === "" || infoAddress.khoroo === ""}
+          onClick={clickContinue}
+          variant="contained"
+        >
+          Үргэлжлүүлэх
+        </Button>
       </Stack>
     </Box>
   );

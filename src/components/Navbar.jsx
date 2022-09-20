@@ -20,18 +20,19 @@ import {
   MenuItem,
   Typography,
   IconButton,
-  ListItemIcon
+  ListItemIcon,
 } from "@mui/material";
-import zIndex from "@mui/material/styles/zIndex";
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const {
     userDetail,
+    isLoggedIn,
     indicatorIdx,
     setUserDetail,
+    setIsLoggedIn,
     setIndicatorIdx,
-    setRegisterOpen
+    setRegisterOpen,
   } = useContext(MainContext);
   const { pathname } = useLocation();
 
@@ -54,7 +55,8 @@ export const Navbar = () => {
   };
 
   const logOutHandle = (e) => {
-    setUserDetail(null);
+    setUserDetail({});
+    setIsLoggedIn(false);
   };
 
   return (
@@ -89,15 +91,14 @@ export const Navbar = () => {
                 />
               ))}
             </Tabs>
-            {!userDetail ? (
+            {!isLoggedIn ? (
               <Button
                 variant="contained"
                 onClick={registerOpenHandler}
                 sx={{
-                  backgroundColor: "#66B60F",
                   padding: "12px 55px",
                   fontWeight: 700,
-                  fontSize: { sm: 14, md: 16 }
+                  fontSize: { sm: 14, md: 16 },
                 }}
               >
                 Бүртгүүлэх
@@ -106,9 +107,9 @@ export const Navbar = () => {
               <Box>
                 <Tooltip title="Профайл" arrow>
                   <IconButton onClick={menuClicked}>
-                    <Avatar src={userDetail.image}>
-                      {userDetail.name.charAt(0).toUpperCase() ||
-                        userDetail.email.charAt(0).toUpperCase()}
+                    <Avatar src={userDetail?.image}>
+                      {userDetail.name?.charAt(0).toUpperCase() ||
+                        userDetail.email?.charAt(0).toUpperCase()}
                     </Avatar>
                   </IconButton>
                 </Tooltip>
@@ -118,11 +119,11 @@ export const Navbar = () => {
                   onClose={menuClicked}
                   anchorOrigin={{
                     vertical: "top",
-                    horizontal: "right"
+                    horizontal: "right",
                   }}
                   transformOrigin={{
                     vertical: "top",
-                    horizontal: "right"
+                    horizontal: "right",
                   }}
                 >
                   <MenuItem onClick={logOutHandle}>

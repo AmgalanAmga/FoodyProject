@@ -9,7 +9,7 @@ import {
   FormGroup,
   IconButton,
   Typography,
-  FormControlLabel
+  FormControlLabel,
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { useAuthentication } from "../context/firebaseContext";
@@ -17,10 +17,11 @@ import { useAuthentication } from "../context/firebaseContext";
 export const Login = () => {
   const {
     loginOpen,
-    setLoginOpen,
-    setRegisterOpen,
     userDetail,
-    setUserDetail
+    setLoginOpen,
+    setIsLoggedIn,
+    setUserDetail,
+    setRegisterOpen,
   } = useContext(MainContext);
   const { loginWithEmail } = useAuthentication();
   const passwordRef = useRef();
@@ -30,7 +31,6 @@ export const Login = () => {
     setLoginOpen(false);
   };
   const handleClose = () => setLoginOpen(false);
-  
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {
@@ -38,7 +38,9 @@ export const Login = () => {
         mailOrPhoneRef.current.value,
         passwordRef.current.value
       );
-      setUserDetail(user.user.email);
+      setIsLoggedIn(true);
+      setUserDetail({ email: user.user.email });
+      setLoginOpen(false);
     } catch (error) {
       if (error.code === "auth/wrong-password") {
         alert("Буруу код засдаа 💢");
@@ -57,7 +59,7 @@ export const Login = () => {
           borderRadius: 4,
           position: "absolute",
           background: "#ffffff",
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
         }}
       >
         <Box sx={{ position: "relative" }}>
@@ -73,7 +75,7 @@ export const Login = () => {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            rowGap: 1
+            rowGap: 1,
           }}
         >
           <Typography variant="h5" sx={{ fontWeight: 600 }}>
@@ -84,7 +86,7 @@ export const Login = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center"
+              alignItems: "center",
             }}
           >
             <TextField

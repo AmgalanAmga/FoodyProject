@@ -2,8 +2,13 @@ import { createContext, useState } from "react";
 export const MainContext = createContext();
 export const MainProvider = ({ children }) => {
   const [dates, setDates] = useState([]);
-  const [userDetail, setUserDetail] = useState();
+  const [userDetail, setUserDetail] = useState({
+    email: "",
+    name: "",
+    image: "",
+  });
   const [activeStep, setActiveStep] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [dateSearch, setDateSearch] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
@@ -23,6 +28,7 @@ export const MainProvider = ({ children }) => {
     dateSearch,
     detailOpen,
     activeStep,
+    isLoggedIn,
     setLoginOpen,
     registerOpen,
     indicatorIdx,
@@ -32,6 +38,7 @@ export const MainProvider = ({ children }) => {
     setActiveStep,
     ordersInRange,
     monthWeekDays,
+    setIsLoggedIn,
     orderHisDetail,
     myOrderedMeals,
     setIndicatorIdx,
@@ -43,7 +50,7 @@ export const MainProvider = ({ children }) => {
     foodCardDetailInfo,
     menuOrderDetailOpen,
     setFoodCardDetailInfo,
-    setMenuOrderDetailOpen
+    setMenuOrderDetailOpen,
   };
   return <MainContext.Provider value={state}>{children}</MainContext.Provider>;
 };

@@ -85,7 +85,8 @@ export const FoodCart = ({ food }) => {
           <Typography variant="h6">{food.price}₮</Typography>
           <IconButton
             onClick={showFoodInfo}
-            sx={{ color: "white", background: "#66B60F" }}
+            color="primary"
+            sx={{ color: "white",  }}
           >
             <AddIcon />
           </IconButton>

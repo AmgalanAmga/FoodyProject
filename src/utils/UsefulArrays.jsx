@@ -34,6 +34,7 @@ export const weekdaysCodes = {
   Sat: 6,
   Sun: 7
 };
+
 export const provinces = [
   {
     provinceName: "Архангай",
