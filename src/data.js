@@ -23,7 +23,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Амталгаагаар", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -41,7 +42,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Амталгаагаар", icon: salt }
-    ]
+    ],
+    category: "Цавуулаггүй"
   },
   {
     image:
@@ -59,7 +61,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -77,7 +80,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -95,7 +99,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -113,7 +118,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -131,7 +137,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цавуулаггүй"
   },
   {
     image:
@@ -149,7 +156,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -167,7 +175,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цавуулаггүй"
   },
   {
     image:
@@ -185,7 +194,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -203,7 +213,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -221,7 +232,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -239,7 +251,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -257,7 +270,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -275,7 +289,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   },
   {
     image:
@@ -293,7 +308,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -311,7 +327,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -329,7 +346,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -347,7 +365,8 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Цагаан хоол"
   },
   {
     image:
@@ -365,6 +384,7 @@ export const foodDatas = [
       { ingredient: "Ногоон сонгино", amount: "1ш", icon: greenOnion },
       { ingredient: "Халуун чинжүү", amount: "1ш", icon: spice },
       { ingredient: "Давс", amount: "Атгаад цац", icon: salt }
-    ]
+    ],
+    category: "Хүнд хоол"
   }
 ];
