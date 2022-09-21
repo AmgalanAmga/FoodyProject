@@ -7,16 +7,22 @@ import {
   TextField,
   Stack,
   IconButton,
-  Button,
+  Button
 } from "@mui/material";
 import { useState } from "react";
 
 export const VerifyMyOrder = () => {
-  const { activeStep, setActiveStep } = useContext(MainContext);
-  const [verifyPhoneNumber, setVerifyPhoneNumber] = useState("");
+  const { activeStep, setActiveStep, verifyPhoneNumber, setVerifyPhoneNumber } =
+    useContext(MainContext);
+
+  /* Өмнөх алхамруу шилжих */
+
   const backButton = () => {
     setActiveStep(activeStep - 1);
   };
+
+  /* Дараагийн алхамруу шилжих */
+
   const clickContinue = () => {
     setActiveStep(activeStep + 1);
   };
@@ -28,7 +34,7 @@ export const VerifyMyOrder = () => {
         display: "flex",
         minHeight: "90vh",
         alignItems: "center",
-        flexDirection: "column",
+        flexDirection: "column"
       }}
     >
       <Stack direction={"row"}>
@@ -39,7 +45,7 @@ export const VerifyMyOrder = () => {
             width: 40,
             height: 40,
             borderRadius: 2,
-            border: "1px solid gray",
+            border: "1px solid gray"
           }}
         >
           <ArrowLeft />
@@ -53,7 +59,7 @@ export const VerifyMyOrder = () => {
             width: 40,
             height: 40,
             borderRadius: 2,
-            border: "1px solid gray",
+            border: "1px solid gray"
           }}
         >
           <ArrowRight />
@@ -68,6 +74,7 @@ export const VerifyMyOrder = () => {
         бид тань руу баталгаажуулах код илгээх болно.
       </Typography>
       <TextField
+        value={verifyPhoneNumber}
         onChange={phoneChange}
         sx={{ mt: 4 }}
         type={"text"}

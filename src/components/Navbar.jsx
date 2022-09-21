@@ -20,7 +20,7 @@ import {
   MenuItem,
   Typography,
   IconButton,
-  ListItemIcon,
+  ListItemIcon
 } from "@mui/material";
 
 export const Navbar = () => {
@@ -32,9 +32,11 @@ export const Navbar = () => {
     setUserDetail,
     setIsLoggedIn,
     setIndicatorIdx,
-    setRegisterOpen,
+    setRegisterOpen
   } = useContext(MainContext);
   const { pathname } = useLocation();
+
+  /* Аль хуудас сонгогдсон бэ гэдгийг харуулах */
 
   useEffect(() => {
     paramsArray.forEach((el, index) => {
@@ -98,7 +100,7 @@ export const Navbar = () => {
                 sx={{
                   padding: "12px 55px",
                   fontWeight: 700,
-                  fontSize: { sm: 14, md: 16 },
+                  fontSize: { sm: 14, md: 16 }
                 }}
               >
                 Бүртгүүлэх
@@ -119,11 +121,11 @@ export const Navbar = () => {
                   onClose={menuClicked}
                   anchorOrigin={{
                     vertical: "top",
-                    horizontal: "right",
+                    horizontal: "right"
                   }}
                   transformOrigin={{
                     vertical: "top",
-                    horizontal: "right",
+                    horizontal: "right"
                   }}
                 >
                   <MenuItem onClick={logOutHandle}>

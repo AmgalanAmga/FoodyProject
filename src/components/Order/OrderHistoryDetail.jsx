@@ -14,7 +14,13 @@ import { MainContext } from "../../context/MainContext";
 export const OrderHistoryDetail = () => {
   const { detailOpen, setDetailOpen, orderHisDetail } = useContext(MainContext);
   const { date, status, orders, address } = orderHisDetail;
+
+  /* Захиалгын түүхийн мэдрэлгүй мэдээллийн модалыг хаах */
+
   const handleClose = () => setDetailOpen(false);
+
+  /* Тухайн он сар хэд дэх өдөр вэ гэдгийг олох */
+
   const weekDay = moment(date).isoWeekday();
   let weekDayName;
   switch (weekDay) {
@@ -40,9 +46,13 @@ export const OrderHistoryDetail = () => {
       weekDayName = "Ням гараг";
       break;
   }
+
+  /* Захиалгын түүхийн нийт үнийг тооцох */
+
   const totalPrice = orders?.reduce((accum, el) => {
     return accum + el.price;
   }, 0);
+
   return (
     <div>
       <Modal open={detailOpen} onClose={handleClose}>

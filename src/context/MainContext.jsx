@@ -5,21 +5,28 @@ export const MainProvider = ({ children }) => {
   const [userDetail, setUserDetail] = useState({
     email: "",
     name: "",
-    image: "",
+    image: ""
   });
   const [activeStep, setActiveStep] = useState(0);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [dateSearch, setDateSearch] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
   const [indicatorIdx, setIndicatorIdx] = useState(0);
-  const [monthWeekDays, setMonthWeekdays] = useState([]);
-  const [myOrderedMeals, setMyOrderedMeals] = useState([]);
   const [ordersInRange, setOrdersInRange] = useState([]);
+  const [monthWeekDays, setMonthWeekdays] = useState([]);
   const [registerOpen, setRegisterOpen] = useState(false);
+  const [myOrderedMeals, setMyOrderedMeals] = useState([]);
   const [orderHisDetail, setOrderHisDetail] = useState({});
+  const [verifyPhoneNumber, setVerifyPhoneNumber] = useState("");
   const [foodCardDetailInfo, setFoodCardDetailInfo] = useState({});
   const [menuOrderDetailOpen, setMenuOrderDetailOpen] = useState(false);
+  const [infoAddress, setInfoAddress] = useState({
+    city: "",
+    district: "",
+    khoroo: "",
+    detail: ""
+  });
   const state = {
     dates,
     setDates,
@@ -29,6 +36,7 @@ export const MainProvider = ({ children }) => {
     detailOpen,
     activeStep,
     isLoggedIn,
+    infoAddress,
     setLoginOpen,
     registerOpen,
     indicatorIdx,
@@ -39,18 +47,21 @@ export const MainProvider = ({ children }) => {
     ordersInRange,
     monthWeekDays,
     setIsLoggedIn,
+    setInfoAddress,
     orderHisDetail,
     myOrderedMeals,
     setIndicatorIdx,
     setRegisterOpen,
     setOrdersInRange,
     setMonthWeekdays,
+    verifyPhoneNumber,
     setOrderHisDetail,
     setMyOrderedMeals,
     foodCardDetailInfo,
     menuOrderDetailOpen,
+    setVerifyPhoneNumber,
     setFoodCardDetailInfo,
-    setMenuOrderDetailOpen,
+    setMenuOrderDetailOpen
   };
   return <MainContext.Provider value={state}>{children}</MainContext.Provider>;
 };

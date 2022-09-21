@@ -5,19 +5,18 @@ import {
   Payment,
   ChoosingMeal,
   VerifyMyOrder,
-  InformationOfAddress,
+  InformationOfAddress
 } from "../components";
 import { useContext, useEffect } from "react";
 import { MenuMainRouterAnimation } from "../utils/RouterAnimation";
 import {
   Box,
   Step,
-  styled,
   Button,
   Stepper,
   StepLabel,
   Typography,
-  StepConnector,
+  StepConnector
 } from "@mui/material";
 
 export const MenuMain = () => {
@@ -29,8 +28,11 @@ export const MenuMain = () => {
     "Хоолоо сонгох",
     "Хүргэлтийн мэдээлэл",
     "Утасны дугаараа баталгаажуулах",
-    "Төлбөр төлөх",
+    "Төлбөр төлөх"
   ];
+
+  /* Stepper-ийн хуудсуудруу шилжих */
+
   useEffect(() => {
     if (pathname === "/menuMain") return setIndicatorIdx(2);
   }, [pathname]);
@@ -60,7 +62,7 @@ export const MenuMain = () => {
         style={{
           width: "90%",
           margin: "0 auto",
-          minHeight: "100vh",
+          minHeight: "100vh"
         }}
       >
         <Box sx={{ width: "100%" }}>

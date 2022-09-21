@@ -27,12 +27,16 @@ export const MenuFoodDetailCard = () => {
     setMenuOrderDetailOpen
   } = useContext(MainContext);
 
+  /* Модалыг хаах */
+
   const handleClose = () => {
     setMenuOrderDetailOpen(false);
     setNext(false);
     setMyOrderedMeals([]);
     setContinueClickCounter(0);
   };
+
+  /* 7 хоногийн аль өдөр хоолоо хүргүүлж авахаа сонгох */
 
   const nextBtnClicked = (e) => {
     if (continueClickCounter !== 1) {

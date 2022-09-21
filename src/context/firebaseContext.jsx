@@ -1,15 +1,17 @@
 import { auth } from "../utils/Firebase";
 import { createContext, useContext, useState } from "react";
 import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
-  sendSignInLinkToEmail,
   signOut,
-  signInWithEmailLink
+  RecaptchaVerifier,
+  signInWithEmailLink,
+  signInWithPhoneNumber,
+  sendSignInLinkToEmail,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword
 } from "firebase/auth";
+
 export const FirebaseContext = createContext();
+
 export const useAuthentication = () => {
   return useContext(FirebaseContext);
 };
@@ -17,12 +19,21 @@ export const useAuthentication = () => {
 export const FirebaseProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [verifyCodeSection, setVerifyCodeSection] = useState(false);
+
+  /* Имэйл хаягаар бүртгэх */
+
   const registerWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
+
+  /* Имэйл хаягаар нэвтрэх */
+
   const loginWithEmail = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  /* Утасны дугаараа бүртгэх */
+
   const registerWithPhone = (phoneNumber) => {
     window.recaptchaVerifier = new RecaptchaVerifier(
       "recaptcha-container",
@@ -42,6 +53,9 @@ export const FirebaseProvider = ({ children }) => {
         alert(error.message);
       });
   };
+
+  /* Утсанд ирсэн кодыг баталгаажуулах */
+
   const verifyMSGCode = (secretCode) => {
     let confirmationResult = window.confirmationResult;
     try {
@@ -52,6 +66,9 @@ export const FirebaseProvider = ({ children }) => {
       if (error) return alert("Таны оруулсан код буруу байна.");
     }
   };
+
+  /* Имэйлрүү линк яюуулж хэрэглэгч бүртгэх */
+
   const emailLinkAuth = (userEmail, code) => {
     const actionCodeSettings = {
       url: "https://foody-483a1.web.app",
@@ -68,13 +85,13 @@ export const FirebaseProvider = ({ children }) => {
     signOut(auth).then(() => setCurrentUser(null));
   };
   const value = {
+    emailLinkAuth,
+    verifyMSGCode,
     loginWithEmail,
     registerWithEmail,
     registerWithPhone,
     verifyCodeSection,
-    setVerifyCodeSection,
-    verifyMSGCode,
-    emailLinkAuth
+    setVerifyCodeSection
   };
   return (
     <FirebaseContext.Provider value={value}>

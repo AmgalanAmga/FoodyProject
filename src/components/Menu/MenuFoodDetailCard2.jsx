@@ -11,9 +11,15 @@ export const MenuFoodDetailCard2 = () => {
   const [convertArrIntoObj, setConvertArrIntoObj] = useState([]);
   const { monthWeekDays, setMyOrderedMeals } = useContext(MainContext);
 
+  /* Date function-гаас гарсан хугацааны string-ээс 7 хоногийн 
+  нэрний эхний 3 үсгийг авах
+  */
+
   const getWeekdayLetter = monthWeekDays.map((day) =>
     day.toString().slice(0, 3)
   );
+
+  /* Date function-гаас гарсан хугацааны string-гийг тоон хэлбэрт шилжүүлэх */
 
   const dates = monthWeekDays.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {
@@ -24,9 +30,13 @@ export const MenuFoodDetailCard2 = () => {
     );
   }, []);
 
+  /* Он сарыг даваагаас ням гараг хүртэл хугацаанаас хамаарч ангилах */
+
   convertArrIntoObj.sort((a, b) => {
     return weekdaysCodes[a.day] - weekdaysCodes[b.day];
   });
+
+  /* Захиал хоолнуудыг хадгалах */
 
   const storeChosenMeals = (e, date, weekday) => {
     setMyOrderedMeals((preStates) =>

@@ -1,5 +1,9 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 const Theme = createTheme({
+  shadows: {
+    0: "none",
+    1: "none"
+  },
   palette: {
     primary: {
       light: "#75ce9f",

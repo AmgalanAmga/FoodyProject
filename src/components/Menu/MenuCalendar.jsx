@@ -7,24 +7,41 @@ export const MenuCalendar = () => {
   const { setMonthWeekdays } = useContext(MainContext);
   const year = new Date().getFullYear();
   const month = new Date().getMonth() + 1;
+
+  /* Тухайн сар хэдэн өдөртэй вэ гэдгийг олох */
+
   const getDays = (year, month) => {
     return new Date(year, month, 0).getDate();
   };
+
   const a = ["1 - 7", "8 - 14", "15 - 21", "22 - 28"];
   const days = getDays(year, month);
   const weekArray = new Array(Math.floor(days / 7)).fill(a);
+
+  /* Тодорхой 2 он, сар, өдрийн хоорондох өдрүүдийг тооцоолох
+  Жишээ нь: 2022-09-01 - 2022-09-07 байвал
+  2022-09-01
+  2022-09-02
+  2022-09-03
+  2022-09-04
+  2022-09-05
+  2022-09-06
+  2022-09-07
+  */
+
   const whichWeek = (e, week) => {
     const chosenDays = week.split("-");
-    const choseDaysArray = [];
+    const chosenDaysArray = [];
     const startDay = new Date(`${year}-${month}-${chosenDays[0]}`);
     const endDay = new Date(`${year}-${month}-${chosenDays[1]}`);
     const getDate = new Date(startDay.getTime());
     while (getDate <= endDay) {
-      choseDaysArray.push(new Date(getDate));
+      chosenDaysArray.push(new Date(getDate));
       getDate.setDate(getDate.getDate() + 1);
     }
-    setMonthWeekdays(choseDaysArray);
+    setMonthWeekdays(chosenDaysArray);
   };
+
   return (
     <Box
       sx={{

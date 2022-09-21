@@ -26,17 +26,21 @@ export const FoodOrderListTotalPrice = () => {
     { weekday: "Бямба", orders: [] },
     { weekday: "Ням", orders: [] }
   ];
-
   const { myOrderedMeals, setActiveStep, activeStep } = useContext(MainContext);
   console.log(myOrderedMeals);
+
+  /* Дараагийн алхамд шилжих */
+
   const handleNextStep = () => {
     setActiveStep(activeStep + 1);
   };
+
+  /* Зөвхөн нэг л Accordion нээгдэх */
+
   const accordionExpand = (wDay) => (event, isExpanded) => {
     setExpanded(isExpanded ? wDay : false);
   };
   const filterFoods = (e, wDay) => {
-    console.log(wDay.weekday);
     const filteredItems = myOrderedMeals.filter((item) => {
       //   return item.orderedFoodsDates.forEach((order) => {
       //     if (order.weekday === wDay.weekday) {

@@ -9,7 +9,7 @@ import {
   FormGroup,
   IconButton,
   Typography,
-  FormControlLabel,
+  FormControlLabel
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { useAuthentication } from "../context/firebaseContext";
@@ -21,16 +21,25 @@ export const Login = () => {
     setLoginOpen,
     setIsLoggedIn,
     setUserDetail,
-    setRegisterOpen,
+    setRegisterOpen
   } = useContext(MainContext);
   const { loginWithEmail } = useAuthentication();
   const passwordRef = useRef();
   const mailOrPhoneRef = useRef();
+
+  /* Бүртгэх хэсэг нээгдэх */
+
   const jumpToRegister = () => {
     setRegisterOpen(true);
     setLoginOpen(false);
   };
+
+  /* Нэвтрэх хэсэг хаах */
+
   const handleClose = () => setLoginOpen(false);
+
+  /* Firebase-рүү хэрэглэгч нэвтрэх */
+
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {
@@ -47,6 +56,7 @@ export const Login = () => {
       }
     }
   };
+
   return (
     <Modal open={loginOpen} onClose={handleClose}>
       <Box
@@ -59,7 +69,7 @@ export const Login = () => {
           borderRadius: 4,
           position: "absolute",
           background: "#ffffff",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -50%)"
         }}
       >
         <Box sx={{ position: "relative" }}>
@@ -75,7 +85,7 @@ export const Login = () => {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            rowGap: 1,
+            rowGap: 1
           }}
         >
           <Typography variant="h5" sx={{ fontWeight: 600 }}>
@@ -86,7 +96,7 @@ export const Login = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <TextField

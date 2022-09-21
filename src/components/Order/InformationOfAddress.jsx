@@ -7,7 +7,7 @@ import {
   TextField,
   IconButton,
   Typography,
-  Autocomplete,
+  Autocomplete
 } from "@mui/material";
 import { MainContext } from "../../context/MainContext";
 import { ArrowRight, ArrowLeft } from "@mui/icons-material";
@@ -16,36 +16,49 @@ export const InformationOfAddress = () => {
   const khorooRef = useRef();
   const detailRef = useRef();
   const [city, setCity] = useState("");
+  const [soumName, setSoumName] = useState("");
   const [soumValue, setSoumValue] = useState("");
-  const { activeStep, setActiveStep } = useContext(MainContext);
-  const [infoAddress, setInfoAddress] = useState({
-    city: "",
-    district: "",
-    khoroo: "",
-    detail: "",
-  });
-  const optionChange = (e, value) => {
-    setCity(value);
+  const { activeStep, setActiveStep, infoAddress, setInfoAddress } =
+    useContext(MainContext);
+
+  /* Аймаг хотын нэрийг авах */
+
+  const cityChange = (e, value) => {
+    setCity(value.provinceName);
     setSoumValue(value.soums);
   };
+
+  /* Аймаг хотын сум дүүргийн нэрийг авах */
+
+  const soumChange = (e, value) => {
+    setSoumName(value);
+  };
+
+  /* Хаягийн нарийн мэдээллийг авах */
+
   const inputsChange = (e) => {
     const { id, value } = e.target;
     setInfoAddress({ ...infoAddress, [id]: value });
   };
 
+  /* Дараагийн алхамд шилжих */
+
   const clickContinue = () => {
     setInfoAddress({
-      city: city.provinceName,
-      district: soumValue,
+      city: city,
+      district: soumName,
       khoroo: khorooRef.current.value,
-      detail: detailRef.current.value,
+      detail: detailRef.current.value
     });
     setActiveStep(activeStep + 1);
   };
+
+  /* Өмнөх алхамд шилжих */
+
   const backButton = () => {
     setActiveStep(activeStep - 1);
   };
-  console.log(infoAddress);
+
   return (
     <Box
       sx={{
@@ -53,7 +66,7 @@ export const InformationOfAddress = () => {
         display: "flex",
         minHeight: "90vh",
         alignItems: "center",
-        flexDirection: "column",
+        flexDirection: "column"
       }}
     >
       <Stack direction={"row"}>
@@ -63,7 +76,7 @@ export const InformationOfAddress = () => {
             width: 40,
             height: 40,
             borderRadius: 2,
-            border: "1px solid gray",
+            border: "1px solid gray"
           }}
           onClick={backButton}
         >
@@ -80,7 +93,7 @@ export const InformationOfAddress = () => {
             borderRadius: 2,
             border: "1px solid gray",
             width: 40,
-            height: 40,
+            height: 40
           }}
         >
           <ArrowRight />
@@ -91,7 +104,7 @@ export const InformationOfAddress = () => {
           disableClearable
           sx={{ width: 300 }}
           options={provinces}
-          onChange={optionChange}
+          onChange={cityChange}
           getOptionLabel={(option) => option.provinceName}
           renderInput={(provinces) => (
             <TextField {...provinces} label="Хот/Аймаг" />
@@ -99,8 +112,8 @@ export const InformationOfAddress = () => {
         />
         <Autocomplete
           sx={{ width: 300 }}
-          onChange={optionChange}
-          options={city.soums || []}
+          onChange={soumChange}
+          options={soumValue || []}
           renderInput={(soums) => <TextField {...soums} label="Дүүрэг/Сум" />}
         />
         <TextField
