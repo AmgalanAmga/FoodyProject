@@ -7,14 +7,14 @@ import {
   TextField,
   IconButton,
   Typography,
-  FormControlLabel,
+  FormControlLabel
 } from "@mui/material";
 import {
   Mail,
   Close,
   RememberMe,
   PhoneIphone,
-  MailOutline,
+  MailOutline
 } from "@mui/icons-material";
 import { MainContext } from "../context/MainContext";
 import { useAuthentication } from "../context/firebaseContext";
@@ -36,9 +36,12 @@ export const Register = () => {
   );
   const [isChecked, setIsChecked] = useState({
     email: true,
-    phoneNumber: false,
+    phoneNumber: false
   });
   const handleClose = () => setRegisterOpen(false);
+
+  /* Утасны дугаараар эсвэл имэйл хаягаар бүртгүүлэх */
+
   const registerTypeHandler = (e) => {
     const { id, checked } = e.target;
     if (id === "email") {
@@ -49,6 +52,9 @@ export const Register = () => {
       setIsChecked({ email: false, phoneNumber: checked });
     }
   };
+
+  /* Имэйл хаягаар firebase-д бүртгэх */
+
   const handleSubmitWithEmail = async (e) => {
     e.preventDefault();
     try {
@@ -57,7 +63,7 @@ export const Register = () => {
         mailOrPhoneRef.current.value,
         passwordRef.current.value
       );
-      alert("Хэрэглэгч бүртгэгдлээ 😃")
+      alert("Хэрэглэгч бүртгэгдлээ 😃");
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
         alert("Бүртгэлтэй хэрэглэгч байна 😡");
@@ -66,6 +72,9 @@ export const Register = () => {
     mailOrPhoneRef.current.value = "";
     passwordRef.current.value = "";
   };
+
+  /* Утасны дугаараар firebase-д бүртгэх */
+
   const handleSubmitWithNumber = async (e) => {
     e.preventDefault();
     if (verifyCodeSection) {
@@ -83,10 +92,14 @@ export const Register = () => {
     }
     setRegisterOpen(false);
   };
+
+  /* Бүртгэлтэй бол нэвтрэх хэсэгрүү үсрэх */
+
   const jumpToLogin = () => {
     setRegisterOpen(false);
     setLoginOpen(true);
   };
+
   return (
     <Modal open={registerOpen} onClose={handleClose}>
       <Box
@@ -99,7 +112,7 @@ export const Register = () => {
           borderRadius: 4,
           background: "#ffffff",
           position: "absolute",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-50%, -50%)"
         }}
       >
         <Box sx={{ position: "relative" }}>
@@ -115,7 +128,7 @@ export const Register = () => {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            rowGap: 1,
+            rowGap: 1
           }}
         >
           <Typography variant="h5" sx={{ fontWeight: 600 }}>
@@ -157,7 +170,7 @@ export const Register = () => {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              alignItems: "center"
             }}
           >
             <TextField
@@ -181,7 +194,7 @@ export const Register = () => {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
-                  rowGap: 2,
+                  rowGap: 2
                 }}
               >
                 <Box id="recaptcha-container"></Box>

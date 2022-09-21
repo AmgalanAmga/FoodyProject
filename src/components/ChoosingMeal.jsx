@@ -3,6 +3,7 @@ import { FoodCart } from "./Food/FoodCart";
 import { useState, useEffect } from "react";
 import ellipse from "../images/Ellipse 22.png";
 import forkKnife from "../images/forkKnife.png";
+import { AnimatePresence } from "framer-motion";
 import {
   Box,
   Grid,
@@ -18,6 +19,9 @@ export const ChoosingMeal = () => {
   const [priceValue, setPriceValue] = useState("");
   const [sortedFoods, setSortedFoods] = useState([]);
   const [categoryValue, setCategoryValue] = useState("");
+
+  /* Category and  price array */
+
   const selectArray = [
     {
       category: "Ангилах",
@@ -38,18 +42,30 @@ export const ChoosingMeal = () => {
       value: priceValue
     }
   ];
+
+  /* Хоолыг өндөр үнэтэйгээс хямд үнэтэйрүү ангилах*/
+
   const sortByPriceFromHighToLow = () => {
     const fromHighToLow = sortedFoods.sort((a, b) => b.price - a.price);
     setSortedFoods([...fromHighToLow]);
   };
+
+  /* Хоолыг бага үнэтэйгээс өндөр үнэтэйрүү ангилах*/
+
   const sortByPriceFromLowToHigh = () => {
     const fromLowToHigh = sortedFoods.sort((a, b) => a.price - b.price);
     setSortedFoods([...fromLowToHigh]);
   };
+
+  /* Бүх хоолыг харуулах*/
+
   const defaultAll = () => {
     const sortByName = foodDatas.sort((a, b) => a.name.localeCompare(b.name));
     setSortedFoods([...sortByName]);
   };
+
+  /* Цавуулаггүй хоол харуулах */
+
   const glutenByCategory = () => {
     defaultAll();
     const glutenFoods = foodDatas.filter((data) => {
@@ -57,6 +73,9 @@ export const ChoosingMeal = () => {
     });
     setSortedFoods([...glutenFoods]);
   };
+
+  /* Цагаан хоол харуулах */
+
   const vegetarianByCategory = () => {
     defaultAll();
     const vegetarianFoods = foodDatas.filter((data) => {
@@ -64,6 +83,9 @@ export const ChoosingMeal = () => {
     });
     setSortedFoods([...vegetarianFoods]);
   };
+
+  /* Хүнд хоол харуулах */
+
   const headvyByCategory = () => {
     defaultAll();
     const headvyFoods = foodDatas.filter((data) => {
@@ -71,6 +93,9 @@ export const ChoosingMeal = () => {
     });
     setSortedFoods([...headvyFoods]);
   };
+
+  /* Үнээр нь ангилах */
+
   useEffect(() => {
     switch (priceValue) {
       case "Хямдаас үнэтэй":
@@ -81,6 +106,9 @@ export const ChoosingMeal = () => {
         return defaultAll();
     }
   }, [priceValue]);
+
+  /* Төрлөөр нь ангилах */
+
   useEffect(() => {
     switch (categoryValue) {
       case "Цагаан хоол":
@@ -95,6 +123,7 @@ export const ChoosingMeal = () => {
         return;
     }
   }, [categoryValue]);
+
   return (
     <div>
       <Box sx={{ mt: "100px", borderTop: "1px solid #C4C4C4" }}>
@@ -131,7 +160,14 @@ export const ChoosingMeal = () => {
         </Box>
         <Box sx={{ display: "flex", mt: 16, columnGap: 4 }}>
           <Box sx={{ flex: 1 }}>
-            <Box sx={{ mb: 15, display: "flex", width: "100%", columnGap: 3 }}>
+            <Box
+              sx={{
+                mb: 15,
+                display: "flex",
+                width: "100%",
+                columnGap: 3
+              }}
+            >
               {selectArray.map((select, i) => (
                 <FormControl sx={{ flex: 1 }} key={i}>
                   <InputLabel>{select.category}</InputLabel>
@@ -150,11 +186,13 @@ export const ChoosingMeal = () => {
               ))}
             </Box>
             <Grid container columnSpacing={4} rowSpacing={12}>
-              {sortedFoods.map((food, k) => (
-                <Grid item xs={6} md={3} lg={4} key={k}>
-                  <FoodCart food={food} />
-                </Grid>
-              ))}
+              <AnimatePresence>
+                {sortedFoods.map((food, k) => (
+                  <Grid item key={k}>
+                    <FoodCart food={food} />
+                  </Grid>
+                ))}
+              </AnimatePresence>
             </Grid>
           </Box>
           <Box sx={{ flex: 1 }}>

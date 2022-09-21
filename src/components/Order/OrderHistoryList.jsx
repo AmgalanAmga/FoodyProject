@@ -15,10 +15,23 @@ export const OrderHistoryList = () => {
     setOrderHisDetail
   } = useContext(MainContext);
 
+  /* Тухайн захиалгын түүхийн дэлгэрэнгүй мэдээллийг харуулах */
+
   const getDetailInfo = (e, detail) => {
     setDetailOpen(true);
     setOrderHisDetail(detail);
   };
+
+  /* Тодорхой 2 он, сар, өдрийн хоорондох өдрүүдийг тооцоолох
+  Жишээ нь: 2022-09-01 - 2022-09-07 байвал
+  2022-09-01
+  2022-09-02
+  2022-09-03
+  2022-09-04
+  2022-09-05
+  2022-09-06
+  2022-09-07
+  */
 
   useEffect(() => {
     const endDate = new Date(dates[1]);
@@ -34,6 +47,8 @@ export const OrderHistoryList = () => {
     };
     getDatesBetweenThem(startDate, endDate);
   }, [dates]);
+
+  /* String он сарыг тооруу хувиргах */
 
   const collapsedDays = days.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {

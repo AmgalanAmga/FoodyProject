@@ -1,8 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { RouterAnimation } from "../utils/RouterAnimation";
 import { Typography } from "@mui/material";
+import { RouterAnimation } from "../utils/RouterAnimation";
 import { OrderCalendar, OrderHistoryList } from "../components";
+
 export const OrderHistory = () => {
   const router = RouterAnimation();
   return (

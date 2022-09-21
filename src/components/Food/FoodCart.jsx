@@ -1,18 +1,21 @@
+import { motion } from "framer-motion";
 import { useContext, useState } from "react";
 import AddIcon from "@mui/icons-material/Add";
 import { MainContext } from "../../context/MainContext";
 import { Box, Typography, IconButton, Modal } from "@mui/material";
 export const FoodCart = ({ food }) => {
   const [existingFood, setExistingFood] = useState(false);
-  const {
-    myOrderedMeals,
-    setMyOrderedMeals,
-    setFoodCardDetailInfo,
-    setMenuOrderDetailOpen
-  } = useContext(MainContext);
+  const { setMyOrderedMeals, setFoodCardDetailInfo, setMenuOrderDetailOpen } =
+    useContext(MainContext);
+
+  /* Модалаас гарах */
+
   const closeHandle = () => {
     setExistingFood(false);
   };
+
+  /* Модал нээх */
+
   const showFoodInfo = () => {
     setMyOrderedMeals((pre) => [
       ...pre,
@@ -26,14 +29,20 @@ export const FoodCart = ({ food }) => {
     setMenuOrderDetailOpen(true);
     setFoodCardDetailInfo(food);
   };
+  
   return (
     <>
-      <Box
-        sx={{
-          padding: 2,
+      <motion.div
+        layout
+        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0 }}
+        exit={{ opacity: 1, scale: 0 }}
+        transition={{ duration: 0.4 }}
+        style={{
+          padding: "16px",
           width: "12rem",
           height: "14rem",
-          borderRadius: 2,
+          borderRadius: "10px",
           position: "relative",
           border: "1px solid #C4C4C4"
         }}
@@ -90,7 +99,7 @@ export const FoodCart = ({ food }) => {
             <AddIcon />
           </IconButton>
         </Box>
-      </Box>
+      </motion.div>
 
       <Modal open={existingFood} onClose={closeHandle} sx={{}}>
         <Typography>Сонгогдсон бүтээгдэхүүн</Typography>
