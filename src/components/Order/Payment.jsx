@@ -1,19 +1,20 @@
 import { useContext } from "react";
 import { ArrowLeft } from "@mui/icons-material";
 import { MainContext } from "../../context/MainContext";
+import { useFirestore } from "../../context/FirestoreContext";
 import {
-  Typography,
   Box,
   Stack,
-  IconButton,
-  Avatar,
   Button,
+  Avatar,
+  IconButton,
+  Typography
 } from "@mui/material";
 
 export const Payment = () => {
   const { activeStep, setActiveStep, myOrderedMeals, infoAddress } =
     useContext(MainContext);
-
+  const { addDocumentIntoFirestore } = useContext(useFirestore);
   /* Өмнөх алхамруу шилжих */
 
   const backButton = () => {
@@ -24,16 +25,19 @@ export const Payment = () => {
     infoAddress.city,
     infoAddress.district,
     infoAddress.khoroo,
-    infoAddress.detail,
+    infoAddress.detail
   ];
-
+  const myOrdersDet = {};
+  // const addDocToFire = () => {
+  //   addDocumentIntoFirestore(myOrdersDet);
+  // };
   return (
     <Box
       sx={{
         mt: 4,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <Stack direction={"row"}>
@@ -44,7 +48,7 @@ export const Payment = () => {
             borderRadius: 2,
             border: "1px solid gray",
             width: 40,
-            height: 40,
+            height: 40
           }}
         >
           <ArrowLeft />
@@ -60,10 +64,11 @@ export const Payment = () => {
           </Typography>
           {myOrderedMeals.map((order, id) => (
             <Box
+              key={id}
               sx={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between",
+                justifyContent: "space-between"
               }}
             >
               <Avatar src={order.foodImage} />
@@ -81,7 +86,7 @@ export const Payment = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              rowGap: 2,
+              rowGap: 2
             }}
           >
             {addressDetail.map((el, id) => (
@@ -93,7 +98,7 @@ export const Payment = () => {
                   border: "1px solid gray",
                   width: 250,
                   py: 2,
-                  borderRadius: 2,
+                  borderRadius: 2
                 }}
               >
                 {el}
