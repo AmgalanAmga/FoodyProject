@@ -7,7 +7,7 @@ import {
   Stack,
   IconButton,
   Avatar,
-  Button
+  Button,
 } from "@mui/material";
 
 export const Payment = () => {
@@ -20,13 +20,20 @@ export const Payment = () => {
     setActiveStep(activeStep - 1);
   };
 
+  const addressDetail = [
+    infoAddress.city,
+    infoAddress.district,
+    infoAddress.khoroo,
+    infoAddress.detail,
+  ];
+
   return (
     <Box
       sx={{
         mt: 4,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
       <Stack direction={"row"}>
@@ -37,7 +44,7 @@ export const Payment = () => {
             borderRadius: 2,
             border: "1px solid gray",
             width: 40,
-            height: 40
+            height: 40,
           }}
         >
           <ArrowLeft />
@@ -56,12 +63,12 @@ export const Payment = () => {
               sx={{
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "space-between"
+                justifyContent: "space-between",
               }}
             >
               <Avatar src={order.foodImage} />
-              <Typography>{order.foodName}</Typography>
-              <Typography>{order.price}₮</Typography>
+              <Typography variant="h6">{order.foodName}</Typography>
+              <Typography variant="h6">{order.price}₮</Typography>
             </Box>
           ))}
         </Box>
@@ -74,57 +81,24 @@ export const Payment = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              rowGap: 2
+              rowGap: 2,
             }}
           >
-            <Typography
-              variant="h6"
-              textAlign={"center"}
-              sx={{
-                border: "1px solid gray",
-                width: 250,
-                py: 2,
-                borderRadius: 2
-              }}
-            >
-              {infoAddress.city}
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign={"center"}
-              sx={{
-                border: "1px solid gray",
-                width: 250,
-                py: 2,
-                borderRadius: 2
-              }}
-            >
-              {infoAddress.district}
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign={"center"}
-              sx={{
-                border: "1px solid gray",
-                width: 250,
-                py: 2,
-                borderRadius: 2
-              }}
-            >
-              {infoAddress.khoroo}
-            </Typography>
-            <Typography
-              variant="h6"
-              textAlign={"center"}
-              sx={{
-                border: "1px solid gray",
-                width: 250,
-                py: 2,
-                borderRadius: 2
-              }}
-            >
-              {infoAddress.detail}
-            </Typography>
+            {addressDetail.map((el, id) => (
+              <Typography
+                key={id}
+                variant="h6"
+                textAlign={"center"}
+                sx={{
+                  border: "1px solid gray",
+                  width: 250,
+                  py: 2,
+                  borderRadius: 2,
+                }}
+              >
+                {el}
+              </Typography>
+            ))}
           </Box>
         </Box>
       </Stack>
