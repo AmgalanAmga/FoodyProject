@@ -26,12 +26,14 @@ export const FoodOrderListTotalPrice = () => {
     { weekday: "Бямба", orders: [] },
     { weekday: "Ням", orders: [] }
   ];
-  const { myOrderedMeals, setActiveStep, activeStep } = useContext(MainContext);
+  const { myOrderedMeals, setActiveStep, activeStep, isLoggedIn } =
+    useContext(MainContext);
   console.log(myOrderedMeals);
 
   /* Дараагийн алхамд шилжих */
 
   const handleNextStep = () => {
+    if (!isLoggedIn) return alert("Нэвтэрч орно уу");
     setActiveStep(activeStep + 1);
   };
 
