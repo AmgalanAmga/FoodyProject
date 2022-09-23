@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/FoodyProject/static/css/main.00e2ddd1.css",
+    "main.js": "/FoodyProject/static/js/main.034b1413.js",
+    "static/media/homeImage1.png": "/FoodyProject/static/media/homeImage1.efb7c87e20277c35c8b2.png",
+    "static/media/screen1.png": "/FoodyProject/static/media/screen1.b4072c17112bd39a7d97.png",
+    "static/media/screen3.png": "/FoodyProject/static/media/screen3.6cbbd2db75752bf35c8a.png",
+    "static/media/screen2.png": "/FoodyProject/static/media/screen2.7da7e4bcef23bdc9f35f.png",
+    "static/media/garlic.png": "/FoodyProject/static/media/garlic.e2514f32a3ceb88923a3.png",
+    "static/media/pork.png": "/FoodyProject/static/media/pork.211950b9bf2b3db58386.png",
+    "static/media/greenOnion.png": "/FoodyProject/static/media/greenOnion.b016703bff5ba4929ab9.png",
+    "static/media/onion.png": "/FoodyProject/static/media/onion.f2f3178b04fa0f3e6d18.png",
+    "static/media/spice.jpg": "/FoodyProject/static/media/spice.d7c89fc059f573861ce3.jpg",
+    "static/media/kimchi.jpg": "/FoodyProject/static/media/kimchi.53ac1c3d512920c14006.jpg",
+    "static/media/howOrder.PNG": "/FoodyProject/static/media/howOrder.5dfa98984c1df86946bd.PNG",
+    "static/media/always.PNG": "/FoodyProject/static/media/always.0e21bd7bf451f65a5f59.PNG",
+    "static/media/salt.jpg": "/FoodyProject/static/media/salt.d1f6eea097e3b885d911.jpg",
+    "static/media/3.png": "/FoodyProject/static/media/3.ab510ce61548dc6e441c.png",
+    "index.html": "/FoodyProject/index.html",
+    "main.00e2ddd1.css.map": "/FoodyProject/static/css/main.00e2ddd1.css.map",
+    "main.034b1413.js.map": "/FoodyProject/static/js/main.034b1413.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00e2ddd1.css",
+    "static/js/main.034b1413.js"
+  ]
+}
