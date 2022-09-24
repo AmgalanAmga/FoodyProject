@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ellipse from "../images/Ellipse 22.png";
 import forkKnife from "../images/forkKnife.png";
 import { AnimatePresence } from "framer-motion";
+import gg from "./"
 import {
   Box,
   Grid,
