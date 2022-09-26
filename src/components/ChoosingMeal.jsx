@@ -75,11 +75,15 @@ export const ChoosingMeal = () => {
       default:
         return defaultAll();
     }
-  }, [priceValue, sortByPriceFromLowToHigh, sortByPriceFromHighToLow]);
+  }, [priceValue, sortedFoods]);
 
   /* Төрлөөр нь ангилах */
 
   useEffect(() => {
+    const defaultAll = () => {
+      const sortByName = foodDatas.sort((a, b) => a.name.localeCompare(b.name));
+      setSortedFoods([...sortByName]);
+    };
     const glutenByCategory = () => {
       defaultAll();
       const glutenFoods = foodDatas.filter((data) => {
@@ -120,7 +124,7 @@ export const ChoosingMeal = () => {
       default:
         return;
     }
-  }, [categoryValue, vegetarianByCategory, glutenByCategory, headvyByCategory]);
+  }, [categoryValue,]);
 
   return (
     <div>
