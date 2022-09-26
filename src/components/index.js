@@ -1,7 +1,6 @@
 export * from "./Login";
 export * from "./Navbar";
 export * from "./Register";
-export * from "./ConfirmForm";
 export * from "./ChoosingMeal";
 export * from "./Order/Payment";
 export * from "./Food/FoodCart";
