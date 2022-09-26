@@ -11,7 +11,7 @@ import {
   MenuItem,
   InputLabel,
   Typography,
-  FormControl
+  FormControl,
 } from "@mui/material";
 import { MenuFoodDetailCard, FoodOrderListTotalPrice } from "../components";
 
@@ -30,73 +30,43 @@ export const ChoosingMeal = () => {
         "Цагаан хоол",
         "Цавуулаггүй",
         "Хөнгөн хоол",
-        "Хүнд хоол"
+        "Хүнд хоол",
       ],
       func: (event) => setCategoryValue(event.target.value),
-      value: categoryValue
+      value: categoryValue,
     },
     {
       category: "Үнэ",
       options: ["Бүгд", "Хямдаас үнэтэй", "Үнэтэйгээс хямд"],
       func: (event) => setPriceValue(event.target.value),
-      value: priceValue
-    }
+      value: priceValue,
+    },
   ];
 
   /* Хоолыг өндөр үнэтэйгээс хямд үнэтэйрүү ангилах*/
 
-  const sortByPriceFromHighToLow = () => {
-    const fromHighToLow = sortedFoods.sort((a, b) => b.price - a.price);
-    setSortedFoods([...fromHighToLow]);
-  };
-
-  /* Хоолыг бага үнэтэйгээс өндөр үнэтэйрүү ангилах*/
-
-  const sortByPriceFromLowToHigh = () => {
-    const fromLowToHigh = sortedFoods.sort((a, b) => a.price - b.price);
-    setSortedFoods([...fromLowToHigh]);
-  };
-
   /* Бүх хоолыг харуулах*/
 
-  const defaultAll = () => {
-    const sortByName = foodDatas.sort((a, b) => a.name.localeCompare(b.name));
-    setSortedFoods([...sortByName]);
-  };
-
   /* Цавуулаггүй хоол харуулах */
-
-  const glutenByCategory = () => {
-    defaultAll();
-    const glutenFoods = foodDatas.filter((data) => {
-      return data.category === "Цавуулаггүй";
-    });
-    setSortedFoods([...glutenFoods]);
-  };
-
-  /* Цагаан хоол харуулах */
-
-  const vegetarianByCategory = () => {
-    defaultAll();
-    const vegetarianFoods = foodDatas.filter((data) => {
-      return data.category === "Цагаан хоол";
-    });
-    setSortedFoods([...vegetarianFoods]);
-  };
-
-  /* Хүнд хоол харуулах */
-
-  const headvyByCategory = () => {
-    defaultAll();
-    const headvyFoods = foodDatas.filter((data) => {
-      return data.category === "Хүнд хоол";
-    });
-    setSortedFoods([...headvyFoods]);
-  };
 
   /* Үнээр нь ангилах */
 
   useEffect(() => {
+    const defaultAll = () => {
+      const sortByName = foodDatas.sort((a, b) => a.name.localeCompare(b.name));
+      setSortedFoods([...sortByName]);
+    };
+    const sortByPriceFromHighToLow = () => {
+      const fromHighToLow = sortedFoods.sort((a, b) => b.price - a.price);
+      setSortedFoods([...fromHighToLow]);
+    };
+
+    /* Хоолыг бага үнэтэйгээс өндөр үнэтэйрүү ангилах*/
+
+    const sortByPriceFromLowToHigh = () => {
+      const fromLowToHigh = sortedFoods.sort((a, b) => a.price - b.price);
+      setSortedFoods([...fromLowToHigh]);
+    };
     switch (priceValue) {
       case "Хямдаас үнэтэй":
         return sortByPriceFromLowToHigh();
@@ -110,6 +80,34 @@ export const ChoosingMeal = () => {
   /* Төрлөөр нь ангилах */
 
   useEffect(() => {
+    const glutenByCategory = () => {
+      defaultAll();
+      const glutenFoods = foodDatas.filter((data) => {
+        return data.category === "Цавуулаггүй";
+      });
+      setSortedFoods([...glutenFoods]);
+    };
+
+    /* Цагаан хоол харуулах */
+
+    const vegetarianByCategory = () => {
+      defaultAll();
+      const vegetarianFoods = foodDatas.filter((data) => {
+        return data.category === "Цагаан хоол";
+      });
+      setSortedFoods([...vegetarianFoods]);
+    };
+
+    /* Хүнд хоол харуулах */
+
+    const headvyByCategory = () => {
+      defaultAll();
+      const headvyFoods = foodDatas.filter((data) => {
+        return data.category === "Хүнд хоол";
+      });
+      setSortedFoods([...headvyFoods]);
+    };
+
     switch (categoryValue) {
       case "Цагаан хоол":
         return vegetarianByCategory();
@@ -131,7 +129,7 @@ export const ChoosingMeal = () => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
           }}
         >
           <Box sx={{ position: "relative", mt: "52px", mb: 2 }}>
@@ -144,7 +142,7 @@ export const ChoosingMeal = () => {
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                width: "20px"
+                width: "20px",
               }}
             />
           </Box>
@@ -165,7 +163,7 @@ export const ChoosingMeal = () => {
                 mb: 15,
                 display: "flex",
                 width: "100%",
-                columnGap: 3
+                columnGap: 3,
               }}
             >
               {selectArray.map((select, i) => (
