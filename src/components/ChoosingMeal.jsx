@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import ellipse from "../images/Ellipse 22.png";
 import forkKnife from "../images/forkKnife.png";
 import { AnimatePresence } from "framer-motion";
-import gg from "./"
 import {
   Box,
   Grid,
@@ -106,7 +105,7 @@ export const ChoosingMeal = () => {
       default:
         return defaultAll();
     }
-  }, [priceValue]);
+  }, [priceValue, sortByPriceFromLowToHigh, sortByPriceFromHighToLow]);
 
   /* Төрлөөр нь ангилах */
 
@@ -123,7 +122,7 @@ export const ChoosingMeal = () => {
       default:
         return;
     }
-  }, [categoryValue]);
+  }, [categoryValue, vegetarianByCategory, glutenByCategory, headvyByCategory]);
 
   return (
     <div>

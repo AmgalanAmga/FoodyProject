@@ -28,7 +28,7 @@ export const MenuFoodDetailCard2 = () => {
         return { day: getWeekdayLetter[idx], date: date };
       })
     );
-  }, [dates]);
+  }, [dates, getWeekdayLetter]);
 
   /* Он сарыг даваагаас ням гараг хүртэл хугацаанаас хамаарч ангилах */
 

@@ -8,11 +8,10 @@ export const OrderHistoryList = () => {
   const [days, setDays] = useState([]);
   const {
     dates,
-    dateSearch,
     setDetailOpen,
     ordersInRange,
     setOrdersInRange,
-    setOrderHisDetail
+    setOrderHisDetail,
   } = useContext(MainContext);
 
   /* Тухайн захиалгын түүхийн дэлгэрэнгүй мэдээллийг харуулах */
@@ -53,13 +52,13 @@ export const OrderHistoryList = () => {
   const collapsedDays = days.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {
     fakeData.filter((el) => {
-     return collapsedDays.forEach((day) => {
+      return collapsedDays.forEach((day) => {
         if (day === el.date) {
           setOrdersInRange((pre) => [...pre, el]);
         }
       });
     });
-  }, [collapsedDays]);
+  }, [collapsedDays, setOrdersInRange]);
 
   return (
     <>
@@ -82,7 +81,7 @@ export const OrderHistoryList = () => {
                 py: 3,
                 columnGap: 26,
                 display: "flex",
-                justifyContent: "center"
+                justifyContent: "center",
               }}
             >
               <Typography variant="h6">{el.date}</Typography>
