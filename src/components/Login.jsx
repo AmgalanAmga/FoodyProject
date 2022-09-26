@@ -4,12 +4,12 @@ import {
   Modal,
   Box,
   Button,
-  Checkbox,
+  
   TextField,
-  FormGroup,
+  
   IconButton,
   Typography,
-  FormControlLabel
+  
 } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { useAuthentication } from "../context/firebaseContext";
@@ -17,7 +17,7 @@ import { useAuthentication } from "../context/firebaseContext";
 export const Login = () => {
   const {
     loginOpen,
-    userDetail,
+    
     setLoginOpen,
     setIsLoggedIn,
     setUserDetail,

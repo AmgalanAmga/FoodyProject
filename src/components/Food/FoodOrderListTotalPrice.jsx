@@ -10,13 +10,12 @@ import {
   Accordion,
   Typography,
   AccordionSummary,
-  AccordionDetails
+  AccordionDetails,
 } from "@mui/material";
 import { useState } from "react";
 
 export const FoodOrderListTotalPrice = () => {
   const [expanded, setExpanded] = useState(false);
-  const [filteredOrders, setFilteredOrders] = useState([]);
   const weekdays = [
     { weekday: "Даваа", orders: [] },
     { weekday: "Мягмар", orders: [] },
@@ -24,7 +23,7 @@ export const FoodOrderListTotalPrice = () => {
     { weekday: "Пүрэв", orders: [] },
     { weekday: "Баасан", orders: [] },
     { weekday: "Бямба", orders: [] },
-    { weekday: "Ням", orders: [] }
+    { weekday: "Ням", orders: [] },
   ];
   const { myOrderedMeals, setActiveStep, activeStep, isLoggedIn } =
     useContext(MainContext);
@@ -42,16 +41,7 @@ export const FoodOrderListTotalPrice = () => {
   const accordionExpand = (wDay) => (event, isExpanded) => {
     setExpanded(isExpanded ? wDay : false);
   };
-  const filterFoods = (e, wDay) => {
-    const filteredItems = myOrderedMeals.filter((item) => {
-      //   return item.orderedFoodsDates.forEach((order) => {
-      //     if (order.weekday === wDay.weekday) {
-      //       setFilteredOrders([...item]);
-      //     }
-      //   });
-    });
-  };
-  console.log(filteredOrders);
+
   const totalPrice = myOrderedMeals.reduce((accum, el) => accum + el.price, 0);
   return (
     <Stack direction={"column"} sx={{ position: "fixed", width: "45%" }}>
@@ -66,7 +56,7 @@ export const FoodOrderListTotalPrice = () => {
             <Typography>{day.weekday}</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            {filteredOrders.map((order, ids) => (
+            {myOrderedMeals.map((order, ids) => (
               <List key={ids}>
                 <FoodOrderListItem order={order} />
               </List>

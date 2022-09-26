@@ -91,7 +91,8 @@ export const FirebaseProvider = ({ children }) => {
     registerWithEmail,
     registerWithPhone,
     verifyCodeSection,
-    setVerifyCodeSection
+    setVerifyCodeSection,
+    currentUser
   };
   return (
     <FirebaseContext.Provider value={value}>

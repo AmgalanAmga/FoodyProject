@@ -20,7 +20,7 @@ export const MenuFoodDetailCard = () => {
   const [next, setNext] = useState(false);
   const [continueClickCounter, setContinueClickCounter] = useState(0);
   const {
-    myOrderedMeals,
+    
     setMyOrderedMeals,
     foodCardDetailInfo,
     menuOrderDetailOpen,

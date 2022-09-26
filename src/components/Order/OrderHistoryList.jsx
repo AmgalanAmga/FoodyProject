@@ -53,13 +53,13 @@ export const OrderHistoryList = () => {
   const collapsedDays = days.map((day) => day.toISOString().slice(0, 10));
   useEffect(() => {
     fakeData.filter((el) => {
-      collapsedDays.forEach((day) => {
+     return collapsedDays.forEach((day) => {
         if (day === el.date) {
           setOrdersInRange((pre) => [...pre, el]);
         }
       });
     });
-  }, [dateSearch]);
+  }, [collapsedDays]);
 
   return (
     <>

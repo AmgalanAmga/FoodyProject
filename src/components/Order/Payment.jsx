@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ArrowLeft } from "@mui/icons-material";
 import { MainContext } from "../../context/MainContext";
-import { useFirestore } from "../../context/FirestoreContext";
 import {
   Box,
   Stack,
@@ -14,7 +13,6 @@ import {
 export const Payment = () => {
   const { activeStep, setActiveStep, myOrderedMeals, infoAddress } =
     useContext(MainContext);
-  const { addDocumentIntoFirestore } = useContext(useFirestore);
   /* Өмнөх алхамруу шилжих */
 
   const backButton = () => {
@@ -27,10 +25,7 @@ export const Payment = () => {
     infoAddress.khoroo,
     infoAddress.detail
   ];
-  const myOrdersDet = {};
-  // const addDocToFire = () => {
-  //   addDocumentIntoFirestore(myOrdersDet);
-  // };
+  
   return (
     <Box
       sx={{

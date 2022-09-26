@@ -1,4 +1,4 @@
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { provinces } from "../../utils/UsefulArrays";
 import {
   Box,

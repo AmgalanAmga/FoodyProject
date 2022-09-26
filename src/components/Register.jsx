@@ -27,7 +27,7 @@ export const Register = () => {
     registerWithPhone,
     verifyCodeSection,
     verifyMSGCode,
-    emailLinkAuth
+    
   } = useAuthentication();
   const { registerOpen, setRegisterOpen, setLoginOpen } =
     useContext(MainContext);

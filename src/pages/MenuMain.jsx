@@ -5,37 +5,28 @@ import {
   Payment,
   ChoosingMeal,
   VerifyMyOrder,
-  InformationOfAddress
+  InformationOfAddress,
 } from "../components";
 import { useContext, useEffect } from "react";
 import { MenuMainRouterAnimation } from "../utils/RouterAnimation";
-import {
-  Box,
-  Step,
-  Button,
-  Stepper,
-  StepLabel,
-  Typography,
-  StepConnector
-} from "@mui/material";
+import { Box, Step, Stepper, StepLabel, Typography } from "@mui/material";
 
 export const MenuMain = () => {
-  const { setIndicatorIdx, activeStep, setActiveStep } =
-    useContext(MainContext);
+  const { setIndicatorIdx, activeStep } = useContext(MainContext);
   const { pathname } = useLocation();
   const router = MenuMainRouterAnimation();
   const steps = [
     "Хоолоо сонгох",
     "Хүргэлтийн мэдээлэл",
     "Утасны дугаараа баталгаажуулах",
-    "Төлбөр төлөх"
+    "Төлбөр төлөх",
   ];
 
   /* Stepper-ийн хуудсуудруу шилжих */
 
   useEffect(() => {
     if (pathname === "/menuMain") return setIndicatorIdx(2);
-  }, [pathname]);
+  });
 
   const stepContent = (step) => {
     switch (step) {
@@ -62,7 +53,7 @@ export const MenuMain = () => {
         style={{
           width: "90%",
           margin: "0 auto",
-          minHeight: "100vh"
+          minHeight: "100vh",
         }}
       >
         <Box sx={{ width: "100%" }}>

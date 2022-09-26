@@ -42,7 +42,7 @@ export const Navbar = () => {
     paramsArray.forEach((el, index) => {
       if (el.path === pathname) return setIndicatorIdx(index);
     });
-  }, [pathname]);
+  });
 
   const indicatorChange = (e, idx) => {
     setIndicatorIdx(idx);
