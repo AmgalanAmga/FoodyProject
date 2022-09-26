@@ -48,7 +48,6 @@ export const FoodOrderListTotalPrice = () => {
       {weekdays.map((day, i) => (
         <Accordion
           key={i}
-          onClick={(e) => filterFoods(e, day)}
           expanded={expanded === day.weekday}
           onChange={accordionExpand(day.weekday)}
         >
